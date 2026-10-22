@@ -1,0 +1,1613 @@
+{
+    "Fields": {
+        "f_TOP1645542559": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "DCBUS TOP MUX selector",
+            "enumerate": [
+                [
+                    "1",
+                    "",
+                    "VDDHPPA"
+                ],
+                [
+                    "2",
+                    "",
+                    "VDDTRX"
+                ],
+                [
+                    "3",
+                    "",
+                    "VDDDCO"
+                ],
+                [
+                    "4",
+                    "",
+                    "VDDCLKGEN"
+                ],
+                [
+                    "5",
+                    "",
+                    "VDDADC"
+                ],
+                [
+                    "6",
+                    "",
+                    "VDDDIG"
+                ],
+                [
+                    "7",
+                    "",
+                    "VDDPLL"
+                ],
+                [
+                    "8",
+                    "",
+                    "VDDAUX"
+                ],
+                [
+                    "9",
+                    "",
+                    "VDDLS"
+                ],
+                [
+                    "10",
+                    "",
+                    "VDDDIGHPPA"
+                ],
+                [
+                    "11",
+                    "",
+                    "rffe_dcbus_out"
+                ],
+                [
+                    "12",
+                    "",
+                    "pll_dcbus"
+                ],
+                [
+                    "13",
+                    "",
+                    "auxpll_atb_out"
+                ],
+                [
+                    "14",
+                    "",
+                    "clkgen_clk_dcbus"
+                ],
+                [
+                    "15",
+                    "",
+                    "rxbb_atb_dc_out"
+                ],
+                [
+                    "16",
+                    "",
+                    "gpadc_atb_dc_out"
+                ],
+                [
+                    "17",
+                    "",
+                    "vtemp_mon"
+                ],
+                [
+                    "18",
+                    "",
+                    "hqref_vref_0v6"
+                ],
+                [
+                    "19",
+                    "",
+                    "hqref_vref_0v8"
+                ],
+                [
+                    "20",
+                    "",
+                    "hqref_vref_0v9"
+                ],
+                [
+                    "21",
+                    "",
+                    "hqref_vref_1v"
+                ],
+                [
+                    "22",
+                    "",
+                    "ip_ibias_30u_trim"
+                ]
+            ],
+            "hw": "-",
+            "name": "TOP_DCBUS_MUX_SEL",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 5
+        },
+        "f_ipanahoodtop_TOP_BT__1688733047": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 6
+        },
+        "f_ipanahoodtop_TOP_BT__1754927336": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_1V8",
+            "description": "D2A 1V8 SPARE",
+            "hw": "-",
+            "name": "TOP_SPARE_D2A_1V8",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 8
+        },
+        "f_ipanahoodtop_TOP_BT__175492733601754927847": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "bits <7:5> D2A 1V5 SPARE; bits<4:0> TEMP_SENSOR_TRIM_OVER_TEMP (trim of over-temperature sensor, to adjust temp sensor value in the spec of +/-5\u00b0C)",
+            "hw": "-",
+            "name": "TOP_SPARE_D2A_1V5",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 8
+        },
+        "f_ipanahoodtop_TOP_BT__17549273360175492784701754927937": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_ls",
+            "description": "D2A SPARE",
+            "hw": "-",
+            "name": "TOP_SPARE1_D2A",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 8
+        },
+        "f_ipanahoodtop_TOP_BT__1754927336017549278470175492793701754927998": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_ls",
+            "description": "D2A SPARE",
+            "hw": "-",
+            "name": "TOP_SPARE2_D2A",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 8
+        },
+        "f_ipanahoodtop_TOP_BT__1754928054": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_1V8",
+            "description": "1V8 A2D SPARE",
+            "hw": "-",
+            "name": "TOP_SPARE_A2D_1V8",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4
+        },
+        "f_ipanahoodtop_TOP_BT__175492805411754928271": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_ls",
+            "description": "A2D SPARE",
+            "hw": "-",
+            "name": "TOP_SPARE_A2D",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 8
+        },
+        "f_ipanahoodtop_TOP_BT__1754928241": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_1V5",
+            "description": "1V5 A2D SPARE",
+            "hw": "-",
+            "name": "TOP_SPARE_A2D_1V5",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4
+        },
+        "f_ipanahoodtop_TOP_BT__1754928553": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "TOP NRFA version IDentification code",
+            "hw": "-",
+            "name": "TOP_NRFA_ID",
+            "r": "-",
+            "reset": "0x11",
+            "rw": "r-",
+            "size": 8
+        },
+        "f_ipanakibonbtop1647005699": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "A",
+            "cell": "ipanasharedlvlsh_d2a_1V8",
+            "description": "redirect mux out to gpio pin",
+            "hw": "-",
+            "name": "TOP_DCBUS_EN_GPIO",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop164700569921688732890": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "",
+            "cell": "",
+            "description": "Cmos buffer I-path selection",
+            "hw": "-",
+            "name": "TOP_CMOS_BUF_SEL_I",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4
+        },
+        "f_ipanakibonbtop16470056992168873289011688733016": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "",
+            "cell": "ipanasharedlvlsh_d2a_1V8",
+            "description": "Cmos buffer I-path enable",
+            "hw": "-",
+            "name": "TOP_CMOS_BUF_EN_I",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop1647005793": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 6
+        },
+        "f_ipanakibonbtop1647015384": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 3
+        },
+        "f_ipanakibonbtop1647343769": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "A",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "redirect mux out to gpadc",
+            "hw": "-",
+            "name": "TOP_DCBUS_EN_GPADC",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop164734376911688732890": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "",
+            "cell": "",
+            "description": "Cmos buffer Q-path selection",
+            "hw": "-",
+            "name": "TOP_CMOS_BUF_SEL_Q",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4
+        },
+        "f_ipanakibonbtop16473437691168873289001688733016": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "",
+            "cell": "ipanasharedlvlsh_d2a_1V8",
+            "description": "Cmos buffer Q-path enable",
+            "hw": "-",
+            "name": "TOP_CMOS_BUF_EN_Q",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        }
+    },
+    "General": {
+        "base_address": "0x00000350",
+        "blockprefix": "ipanahoodtop_TOP_BT_",
+        "date": "2026-02-16 09:26:07",
+        "default_configs": {},
+        "field_options": {
+            "Ana Name": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Bus Name": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Cell": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Clock Domain": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Config": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "DFT_TPR": [
+                "True",
+                "any",
+                [
+                    "na",
+                    "NRFD"
+                ],
+                "True",
+                "na"
+            ],
+            "DFT_TPR_value": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Description": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "ENUM": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "FSM Name": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Filter": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "HW Update": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Note": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Option": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Port Ctrl List": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "RW Mode": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Reset Mode": [
+                "True",
+                "any",
+                [],
+                "True"
+            ],
+            "Reset Value": [
+                "True",
+                "hexa",
+                [],
+                "True"
+            ],
+            "SWBits": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "SWField": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Size": [
+                "True",
+                "decimal",
+                [],
+                "True"
+            ]
+        },
+        "history_enable": 0,
+        "identical_field_names_enable": 1,
+        "ie_options": {
+            "": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Cell": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Clock Domain": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Comment": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "DFT_TPR": [
+                "True",
+                "any",
+                [
+                    "na",
+                    "NRFD"
+                ],
+                "True",
+                "na"
+            ],
+            "DFT_TPR_value": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Description": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Direction": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Group": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Isolation": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Name": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Pad": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Port Ctrl List": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Power domain": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Reset Value": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Size": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Type": [
+                "True",
+                "any",
+                [],
+                "False"
+            ]
+        },
+        "if_display_enable": 1,
+        "project": "HOOD",
+        "reg_align": "Byte",
+        "reg_options": {
+            "Access": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Address Offset": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "DAC": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Duplicate": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "EDC": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "XORMSK": [
+                "False",
+                "any",
+                [],
+                "False"
+            ]
+        },
+        "reset_info": "",
+        "rmi_last_use": "2.8.93",
+        "rmi_starter": "Unknown",
+        "sequence_options": {
+            "CUSTOM": [
+                "True",
+                "Use Variables",
+                [],
+                "False"
+            ],
+            "LOAD": [
+                "True",
+                "Use Registers",
+                [],
+                "False"
+            ],
+            "POLL": [
+                "True",
+                "Use Registers",
+                [],
+                "False"
+            ],
+            "READ": [
+                "True",
+                "Use Registers",
+                [],
+                "False"
+            ],
+            "RUN": [
+                "True",
+                "Use Sequences",
+                [],
+                "False"
+            ],
+            "WAIT": [
+                "True",
+                "Use Value",
+                [],
+                "False"
+            ],
+            "WRITE": [
+                "True",
+                "Use Registers",
+                [],
+                "False"
+            ]
+        },
+        "sfr_rel_date_field": "",
+        "sfr_rel_maj_field": "",
+        "sfr_rel_min_field": "",
+        "sfr_update_enable": 1,
+        "version": 124
+    },
+    "History": {},
+    "Interface_elements": {
+        "ie_ipanahoodtop_TOP_BT_1697716564": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "comment": "Common to all dig. islands\n",
+            "description": "Scan asynchronous reset not source (active low)\n",
+            "direction": "Input",
+            "group": "DFT",
+            "name": "DFT_RST_N",
+            "size": 1,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697716614": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "comment": "Common to all dig. islands\n",
+            "description": "Scan clock source for scan shift and capture\n",
+            "direction": "Input",
+            "group": "DFT",
+            "name": "DFT_CLK",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697716916": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_d2a_ls",
+            "comment": "Common to all dig. islands\n",
+            "description": "Scan mode for internal mux selection (0: operational mode\u000b1: scan mode)",
+            "direction": "Input",
+            "group": "DFT",
+            "name": "DFT_MODE",
+            "size": 1,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697716960": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "comment": "Common to all dig. islands\n",
+            "direction": "Input",
+            "group": "DFT",
+            "name": "DFT_SHIFT_EN",
+            "size": 1,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697717001": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_d2a_ls",
+            "comment": "Common to all dig. islands\n",
+            "description": "Analog IP safe stating isolation signal for safe value override, active high in scan mode\u000bInput from analog blocks and output to analog blocks tied low most of the time by default\n",
+            "direction": "Input",
+            "group": "DFT",
+            "name": "DFT_ANA_ISO",
+            "size": 1,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697717048": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "comment": "Dedicated to DIG_RFFE_HPPA RTL",
+            "description": "DIG_RFFE_HPPA RTL Scan chain(s) input\n",
+            "direction": "Input",
+            "group": "DFT",
+            "name": "RFFE_DIG_HPPA_DFT_SCAN_IN",
+            "reset_val": "",
+            "size": 14,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697717148": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "comment": "Dedicated to DIG_RFFE_HPPA RTL",
+            "description": "DIG_RFFE_HPPA RTL Scan chain(s) output\n",
+            "direction": "Output",
+            "group": "DFT",
+            "name": "RFFE_DIG_HPPA_DFT_SCAN_OUT",
+            "reset_val": "",
+            "size": 14,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697717178": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "comment": "Dedicated to PLL_DIG RTL",
+            "description": "PLL_DIG RTL Scan chain(s) output\n",
+            "direction": "Output",
+            "group": "DFT",
+            "name": "PLL_DIG_DFT_SCAN_OUT",
+            "size": 16,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697717260": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "comment": "Dedicated to PLL_DIG RTL",
+            "description": "PLL_DIG RTL Scan chain(s) input\n",
+            "direction": "Input",
+            "group": "DFT",
+            "name": "PLL_DIG_DFT_SCAN_IN",
+            "size": 16,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697804212": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "comment": "Dedicated to RXBB_ADC_DIG RTL",
+            "description": "RXBB_ADC_DIG RTL Scan chain(s) output\n",
+            "direction": "Output",
+            "group": "DFT",
+            "name": "RXBB_ADC_DIG_DFT_SCAN_OUT",
+            "size": 2,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697804214": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "comment": "Dedicated to RXBB_ADC_DIG RTL",
+            "description": "RXBB_ADC_DIG RTL Scan chain(s) input\n",
+            "direction": "Input",
+            "group": "DFT",
+            "name": "RXBB_ADC_DIG_DFT_SCAN_IN",
+            "size": 2,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_TOP_BT_1697807524": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "Clock from SYSPLL to be used as radio reference for spurs mitigation on 40MHz multiple channels, 32MHz by default",
+            "direction": "Input",
+            "group": "CLK",
+            "name": "CKSYS",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_ipanahoodtop_TOP_BT_1712215950": {
+            "": "na",
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "na",
+            "description": "Active Low Enable signal for all the Analog to Digital level shifters",
+            "direction": "Input",
+            "group": "NRFD",
+            "name": "LVLSH_A2D_ENB",
+            "reset_val": "0x0",
+            "size": 1,
+            "type": "signal"
+        },
+        "ie_ipanahoodtop_TOP_BT_1712216035": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "digital supply from the power gated domain",
+            "direction": "Input",
+            "group": "NRFD",
+            "name": "VDD_DIG_PG",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanahoodtop_TOP_BT_1731594622": {
+            "": "na",
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "Reset not for NB radio from PMIP att VDD1V8 level. Low means 1V8 D2A levelshifters are isolated.",
+            "direction": "Input",
+            "group": "PMIP",
+            "name": "PD_POR_RST_B_NB_1V8",
+            "reset_val": "0x0",
+            "size": 1,
+            "type": "signal"
+        },
+        "ie_ipanahoodtop_TOP_BT_1731594659": {
+            "": "na",
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "POR for 1.8V supply domain at VBATLIN (3.3V) level. High means supply NOK, low means supply OK. Signal used to safe state Radio LDOs, if VDD1V2 available before VDD1V8..",
+            "direction": "Input",
+            "group": "PMIP",
+            "name": "VDD1V8_NOK_VBATLIN",
+            "reset_val": "0x1",
+            "size": 1,
+            "type": "signal"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738089988": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "RF Port",
+            "direction": "Output",
+            "group": "PAD",
+            "name": "ANT",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090370": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, IO Substrate",
+            "direction": "Input",
+            "group": "IO",
+            "name": "GNDS_BOTTOM",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090371": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, External (I/O) ground",
+            "direction": "Input",
+            "group": "IO",
+            "name": "GNDE_BOTTOM",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090372": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Internal (core) ground",
+            "direction": "Input",
+            "group": "IO",
+            "name": "GND_TOP",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090374": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Core Power Down. Centrally generated signal to configure the I/O cells when core power is down",
+            "direction": "Input",
+            "group": "IO",
+            "name": "CPD_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090375": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "TO BE SHORTED to VDD1V8, if 1.8V internally supplied and VDD1V8 PAD is not bonded, External (I/O) power supply (0V8 \u2013 1V8)",
+            "direction": "Input",
+            "group": "IO",
+            "name": "VDDE_BOTTOM",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanahoodtop_TOP_BT_17380903751": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Rail to drive I/O Supply ESD clamp during ESD event",
+            "direction": "Input",
+            "group": "IO",
+            "name": "TL_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090376": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Supply rail to power ESD trigger circuit during ESD event, switched to vdde rail by ESD trigger circuit during normal operation",
+            "direction": "Input",
+            "group": "IO",
+            "name": "BOOST_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090377": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Power Down. Centrally generated signal to define specific I/O cells in power down mode",
+            "direction": "Input",
+            "group": "IO",
+            "name": "PDN_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090378": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Reference Rail used for specific I/O cells, for example LVDSRX*SF & LVDSTX*SF",
+            "direction": "Input",
+            "group": "IO",
+            "name": "VREF2_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090383": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Power On Reset. Centrally generated signal to define the state of the I/O cells when external power is powered up",
+            "direction": "Input",
+            "group": "IO",
+            "name": "POR_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090384": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Latch. Centrally generated signal to latch core signals of specific I/O cells before entering power down mode",
+            "direction": "Input",
+            "group": "IO",
+            "name": "LATCH_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090385": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Reference Rail used for specific I/O cells, for example LVDSRX*SF & LVDSTX*SF",
+            "direction": "Input",
+            "group": "IO",
+            "name": "VREF1_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090386": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Reference Rail used for specific I/O cells, for example LVDSRX*SF & LVDSTX*SF",
+            "direction": "Input",
+            "group": "IO",
+            "name": "VREF2_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090387": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Supply rail to power ESD trigger circuit during ESD event, switched to vdde rail by ESD trigger circuit during normal operation",
+            "direction": "Input",
+            "group": "IO",
+            "name": "BOOST_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_17380903871": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Rail to drive I/O Supply ESD clamp during ESD event",
+            "direction": "Input",
+            "group": "IO",
+            "name": "TL_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090388": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, External (I/O) power supply (0V8 \u2013 1V8)",
+            "direction": "Input",
+            "group": "IO",
+            "name": "VDDE_TOP",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090389": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Reference Rail used for specific I/O cells, for example LVDSRX*SF & LVDSTX*SF",
+            "direction": "Input",
+            "group": "IO",
+            "name": "VREF1_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090390": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, External (I/O) ground",
+            "direction": "Input",
+            "group": "IO",
+            "name": "GNDE_TOP",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanahoodtop_TOP_BT_17380903901": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, IO Substrate",
+            "direction": "Input",
+            "group": "IO",
+            "name": "GNDS_TOP",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090391": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Internal (core) power (0V8)",
+            "direction": "Input",
+            "group": "IO",
+            "name": "VDD_BOTTOM",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090395": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Core Power Down. Centrally generated signal to configure the I/O cells when core power is down",
+            "direction": "Input",
+            "group": "IO",
+            "name": "CPD_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090396": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Rail to drive Core Supply ESD clamp during ESD event",
+            "direction": "Input",
+            "group": "IO",
+            "name": "TCC_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090397": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Internal (core) ground",
+            "direction": "Input",
+            "group": "IO",
+            "name": "GND_BOTTOM",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090398": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Power On Reset. Centrally generated signal to define the state of the I/O cells when external power is powered up",
+            "direction": "Input",
+            "group": "IO",
+            "name": "POR_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090399": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Latch. Centrally generated signal to latch core signals of specific I/O cells before entering power down mode",
+            "direction": "Input",
+            "group": "IO",
+            "name": "LATCH_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090400": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Power Down. Centrally generated signal to define specific I/O cells in power down mode",
+            "direction": "Input",
+            "group": "IO",
+            "name": "PDN_BOTTOM",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanahoodtop_TOP_BT_1738090608": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Internal (core) power (0V8)",
+            "direction": "Input",
+            "group": "IO",
+            "name": "VDD_TOP",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanahoodtop_TOP_BT_1755109884": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "TOP NRFA version IDentification code",
+            "direction": "Output",
+            "group": "ID",
+            "name": "TOP_NRFA_ID",
+            "size": 8,
+            "type": "signal"
+        },
+        "ie_ipanakibonbtop1647009057": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "CUT, Rail to drive Core Supply ESD clamp during ESD event",
+            "direction": "Input",
+            "group": "IO",
+            "name": "TCC_TOP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanakibonbtop_TOP1646761294": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "dcbus master mux output",
+            "direction": "Output",
+            "group": "DCBUS",
+            "name": "TOP_DCBUS_GPIO",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1651158430": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "1.8V external supply (if bonded) for LDO VDDREF, ATB, CMOS CLK Buffer",
+            "direction": "Input",
+            "group": "PAD",
+            "name": "VDD1V8",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1651158507": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "digital supply from the retation domain",
+            "direction": "Input",
+            "group": "NRFD",
+            "name": "VDD_DIG_R",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1651158585": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "digital ground",
+            "direction": "Input",
+            "group": "NRFD",
+            "name": "VSS_DIG",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1653384198": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "Common analog ground",
+            "direction": "Input",
+            "group": "PAD",
+            "name": "VSS",
+            "size": 9,
+            "type": "ground"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1653384235": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "1.2V external supply for the LDO VDDDIG, VDDHPPADIG, VDDAUX, VDDCKG, VDDADC, VDDLS and VDDPLL",
+            "direction": "Input",
+            "group": "PAD",
+            "name": "VDD1V2MS",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1654783800": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "1.2V external supply for the LDO VDDPA",
+            "direction": "Input",
+            "group": "PAD",
+            "name": "VDD1V2PA",
+            "size": 3,
+            "type": "power"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1654783875": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "1.2V external supply for the LDO VDDTRX and VDDDCO",
+            "direction": "Input",
+            "group": "PAD",
+            "name": "VDD1V2RF",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1679654245": {
+            "": "na",
+            "DFT_TPR": "na",
+            "description": "NOT CUT, Continuous Common ESD ground",
+            "direction": "Input",
+            "group": "IO",
+            "name": "GND_ESD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1679656368": {
+            "": "na",
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "na",
+            "description": "Active Low Enable signal for all the Digital to Analog level shifters",
+            "direction": "Input",
+            "group": "NRFD",
+            "name": "LVLSH_D2A_ENB",
+            "reset_val": "0x0",
+            "size": 1,
+            "type": "signal"
+        },
+        "ie_ipanakibonbtop_TOP_BT_1686931640": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "Radio Reference Clock (From cristal oscillator)",
+            "direction": "Input",
+            "group": "CLK",
+            "name": "CKREF",
+            "size": 1,
+            "type": "clock"
+        }
+    },
+    "Interface_groups": {
+        "ig_ipanahoodtop_TOP_BT_1697716550": {
+            "elem_list": [
+                "ie_ipanahoodtop_TOP_BT_1697717001",
+                "ie_ipanahoodtop_TOP_BT_1697716960",
+                "ie_ipanahoodtop_TOP_BT_1697716916",
+                "ie_ipanahoodtop_TOP_BT_1697716614",
+                "ie_ipanahoodtop_TOP_BT_1697716564",
+                "ie_ipanahoodtop_TOP_BT_1697717048",
+                "ie_ipanahoodtop_TOP_BT_1697717148",
+                "ie_ipanahoodtop_TOP_BT_1697717260",
+                "ie_ipanahoodtop_TOP_BT_1697717178",
+                "ie_ipanahoodtop_TOP_BT_1697804214",
+                "ie_ipanahoodtop_TOP_BT_1697804212"
+            ],
+            "name": "DFT"
+        },
+        "ig_ipanahoodtop_TOP_BT_1731594575": {
+            "elem_list": [
+                "ie_ipanahoodtop_TOP_BT_1731594659",
+                "ie_ipanahoodtop_TOP_BT_1731594622"
+            ],
+            "name": "Supplies POR and NOK"
+        },
+        "ig_ipanahoodtop_TOP_BT_1738089949": {
+            "elem_list": [
+                "ie_ipanakibonbtop_TOP_BT_1653384235",
+                "ie_ipanakibonbtop_TOP_BT_1654783800",
+                "ie_ipanakibonbtop_TOP_BT_1654783875",
+                "ie_ipanakibonbtop_TOP_BT_1651158430",
+                "ie_ipanakibonbtop_TOP_BT_1653384198",
+                "ie_ipanahoodtop_TOP_BT_1738089988",
+                "ie_ipanakibonbtop_TOP_BT_1679654245",
+                "ie_ipanahoodtop_TOP_BT_1738090370",
+                "ie_ipanahoodtop_TOP_BT_1738090371",
+                "ie_ipanahoodtop_TOP_BT_1738090375",
+                "ie_ipanahoodtop_TOP_BT_17380903751",
+                "ie_ipanahoodtop_TOP_BT_1738090376",
+                "ie_ipanahoodtop_TOP_BT_1738090378",
+                "ie_ipanahoodtop_TOP_BT_1738090389",
+                "ie_ipanahoodtop_TOP_BT_1738090399",
+                "ie_ipanahoodtop_TOP_BT_1738090400",
+                "ie_ipanahoodtop_TOP_BT_1738090398",
+                "ie_ipanahoodtop_TOP_BT_1738090395",
+                "ie_ipanahoodtop_TOP_BT_1738090397",
+                "ie_ipanahoodtop_TOP_BT_1738090396",
+                "ie_ipanahoodtop_TOP_BT_1738090391",
+                "ie_ipanahoodtop_TOP_BT_17380903901",
+                "ie_ipanahoodtop_TOP_BT_1738090390",
+                "ie_ipanahoodtop_TOP_BT_1738090388",
+                "ie_ipanahoodtop_TOP_BT_17380903871",
+                "ie_ipanahoodtop_TOP_BT_1738090387",
+                "ie_ipanahoodtop_TOP_BT_1738090386",
+                "ie_ipanahoodtop_TOP_BT_1738090385",
+                "ie_ipanahoodtop_TOP_BT_1738090384",
+                "ie_ipanahoodtop_TOP_BT_1738090377",
+                "ie_ipanahoodtop_TOP_BT_1738090383",
+                "ie_ipanahoodtop_TOP_BT_1738090374",
+                "ie_ipanahoodtop_TOP_BT_1738090372",
+                "ie_ipanakibonbtop1647009057",
+                "ie_ipanahoodtop_TOP_BT_1738090608"
+            ],
+            "name": "PAD RING"
+        },
+        "ig_ipanahoodtop_TOP_BT_1755109875": {
+            "elem_list": [
+                "ie_ipanahoodtop_TOP_BT_1755109884"
+            ],
+            "name": "ID"
+        },
+        "ig_ipanakibonbtop1647258015": {
+            "elem_list": [
+                "ie_ipanahoodtop_TOP_BT_1697807524",
+                "ie_ipanakibonbtop_TOP_BT_1686931640"
+            ],
+            "name": "Clock"
+        },
+        "ig_ipanakibonbtop_TOP1646758894": {
+            "elem_list": [
+                "ie_ipanahoodtop_TOP_BT_1712216035",
+                "ie_ipanakibonbtop_TOP_BT_1651158507",
+                "ie_ipanakibonbtop_TOP_BT_1651158585"
+            ],
+            "name": "NRFD SUPPLIES"
+        },
+        "ig_ipanakibonbtop_TOP1646761165": {
+            "elem_list": [
+                "ie_ipanakibonbtop_TOP1646761294"
+            ],
+            "name": "Analog Test"
+        },
+        "ig_ipanakibonbtop_TOP_BT_1679656347": {
+            "elem_list": [
+                "ie_ipanahoodtop_TOP_BT_1712215950",
+                "ie_ipanakibonbtop_TOP_BT_1679656368"
+            ],
+            "name": "LevelShifterIsolation"
+        }
+    },
+    "Registers": {
+        "r_TOP1645542246": {
+            "access": "rw",
+            "address": "0x0001",
+            "fields": [
+                "f_ipanakibonbtop1647015384",
+                "f_TOP1645542559"
+            ],
+            "name": "TOP_DCBUS_MUX_SEL_REG",
+            "swam": ""
+        },
+        "r_ipanahoodtop_TOP_BT__1688732890": {
+            "access": "rw",
+            "address": "0x0003",
+            "description": "",
+            "fields": [
+                "f_ipanakibonbtop164734376911688732890",
+                "f_ipanakibonbtop164700569921688732890"
+            ],
+            "name": "TOP_CMOS_BUF_SEL_REG"
+        },
+        "r_ipanahoodtop_TOP_BT__1688733016": {
+            "access": "rw",
+            "address": "0x0004",
+            "description": "",
+            "fields": [
+                "f_ipanahoodtop_TOP_BT__1688733047",
+                "f_ipanakibonbtop16473437691168873289001688733016",
+                "f_ipanakibonbtop16470056992168873289011688733016"
+            ],
+            "name": "TOP_CMOS_BUF_EN_REG"
+        },
+        "r_ipanahoodtop_TOP_BT__1754927147": {
+            "access": "rw",
+            "address": "0x0005",
+            "fields": [
+                "f_ipanahoodtop_TOP_BT__1754927336"
+            ],
+            "name": "TOP_SPARE1_REG"
+        },
+        "r_ipanahoodtop_TOP_BT__1754927847": {
+            "access": "rw",
+            "address": "0x0006",
+            "fields": [
+                "f_ipanahoodtop_TOP_BT__175492733601754927847"
+            ],
+            "name": "TOP_SPARE2_REG"
+        },
+        "r_ipanahoodtop_TOP_BT__1754927937": {
+            "access": "rw",
+            "address": "0x0007",
+            "fields": [
+                "f_ipanahoodtop_TOP_BT__17549273360175492784701754927937"
+            ],
+            "name": "TOP_SPARE3_REG"
+        },
+        "r_ipanahoodtop_TOP_BT__1754927998": {
+            "access": "rw",
+            "address": "0x0008",
+            "fields": [
+                "f_ipanahoodtop_TOP_BT__1754927336017549278470175492793701754927998"
+            ],
+            "name": "TOP_SPARE4_REG"
+        },
+        "r_ipanahoodtop_TOP_BT__1754928028": {
+            "access": "r-",
+            "address": "0x0009",
+            "fields": [
+                "f_ipanahoodtop_TOP_BT__1754928241",
+                "f_ipanahoodtop_TOP_BT__1754928054"
+            ],
+            "name": "TOP_SPARE1_STS"
+        },
+        "r_ipanahoodtop_TOP_BT__1754928271": {
+            "access": "r-",
+            "address": "0x000A",
+            "fields": [
+                "f_ipanahoodtop_TOP_BT__175492805411754928271"
+            ],
+            "name": "TOP_SPARE2_STS"
+        },
+        "r_ipanahoodtop_TOP_BT__1754928526": {
+            "access": "r-",
+            "address": "0x000B",
+            "fields": [
+                "f_ipanahoodtop_TOP_BT__1754928553"
+            ],
+            "name": "TOP_NRFA_ID"
+        },
+        "r_ipanakibonbtop1647005441": {
+            "access": "rw",
+            "address": "0x0002",
+            "description": "",
+            "fields": [
+                "f_ipanakibonbtop1647005793",
+                "f_ipanakibonbtop1647343769",
+                "f_ipanakibonbtop1647005699"
+            ],
+            "name": "TOP_DCBUS_SWITCH_REG"
+        }
+    },
+    "Sequences": {
+        "s_TOP_BT1650631214": {
+            "description": "",
+            "name": "TESTMUX_TOP",
+            "parent": "",
+            "sequence": [],
+            "validation_name": "",
+            "verification_name": "TESTMUX_TOP"
+        },
+        "s_TOP_BT1650631243": {
+            "description": "",
+            "name": "en_GPADC_output",
+            "parent": "s_TOP_BT1650631214",
+            "sequence": [
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop1647005699": "0x0",
+                        "f_ipanakibonbtop1647343769": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "",
+            "verification_name": "en_GPADC_output"
+        },
+        "s_TOP_BT1650632577": {
+            "description": "",
+            "name": "TMUXSEL",
+            "parent": "s_TOP_BT1650631214",
+            "sequence": [
+                {
+                    "op": "CUSTOM",
+                    "option": [
+                        "WRITE_REG",
+                        "TOP_DCBUS_MUX_SEL_REG",
+                        "MuxSelValue",
+                        "TOP_DCBUS_MUX_SEL_MASK",
+                        "TOP_DCBUS_MUX_SEL_POS"
+                    ]
+                }
+            ],
+            "validation_name": "",
+            "variables": {
+                "var1": "input [4:0] MuxSelValue;",
+                "var2": "$display(\"\\n Entering  TMUXSEL task\");",
+                "var4": "$display(\"\\n Exiting TMUXSEL task\");"
+            },
+            "verification_name": "TMUXSEL"
+        },
+        "s_ipanakibonbtop_TOP_BT_1652367579": {
+            "description": "",
+            "name": "en_GPIO_output",
+            "parent": "s_TOP_BT1650631214",
+            "sequence": [
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop1647005699": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "",
+            "verification_name": "en_GPIO_output"
+        }
+    },
+    "Templates": {
+        "8051_C_TEMPLATE": {
+            "CUSTOM": "    $c_var1($c_var2, ($c_var3 << $c_var5),$c_var4);",
+            "LOAD": "    LOAD_REG($reg_name, 0x$value_h8, 0x$mask_h); // $field_details",
+            "POLL": "    COMPARE_REG($reg_name, 0x$value_h8, 0x$mask_h8);",
+            "READ": "",
+            "RUN": "    $seq_verif_name;",
+            "WAIT": "    WAIT($value);",
+            "WRITE": "    UPDATE_REG($reg_name, 0x$value_h8, 0x$mask_h); // $field_details",
+            "custom_command": "    $c_var1($c_var2, ($c_var3 << $c_var5),$c_var4);",
+            "field_granularity": false,
+            "header_seq": "//----------------------------------------\n//  function $seq_verif_name\n//----------------------------------------\n$var1\nvoid $seq_verif_name()\n{",
+            "load_command": "    LOAD_REG($reg_name, 0x$value_h8, 0x$mask_h); // $field_details",
+            "poll_command": "    COMPARE_REG($reg_name, 0x$value_h8, 0x$mask_h8);",
+            "read_command": "",
+            "run_command": "    $seq_verif_name;",
+            "seq_def": "",
+            "tail_seq": "}\n\n",
+            "wait_command": "    WAIT($value);",
+            "write_command": "    UPDATE_REG($reg_name, 0x$value_h8, 0x$mask_h); // $field_details"
+        },
+        "DPLL_TEMPLATE": {
+            "CUSTOM": "    `WRITE_REG(`$c_var1, $c_var2, `$c_var3);",
+            "POLL": "    `READ_CMP_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h8);",
+            "RUN": "    task_top.$seq_verif_name;",
+            "WAIT": "    `WAIT($value);",
+            "WRITE": "    `WRITE_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details",
+            "custom_command": "    `WRITE_REG(`$c_var1, $c_var2, `$c_var3);",
+            "field_granularity": false,
+            "header_seq": "//----------------------------------------\n// Register Configuration: $seq_description\n//----------------------------------------\ntask $seq_verif_name;\n$var1\nbegin \n    $var2",
+            "poll_command": "    `READ_CMP_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h8);",
+            "run_command": "    task_top.$seq_verif_name;",
+            "seq_def": "",
+            "tail_seq": "    $var4\n    $var5\nend\nendtask\n\n",
+            "wait_command": "    `WAIT($value);",
+            "write_command": "    `WRITE_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details"
+        },
+        "HELIOS_TEMPLATE": {
+            "POLL": "        `POLL_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "RUN": "        `uvm_do($seq_verif_name)",
+            "WAIT": "        `WAIT($value)",
+            "WRITE": "        `WRITE_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "field_granularity": false,
+            "header_seq": "//----------------------------------------\n// Register Configuration: $seq_description\n//----------------------------------------\nclass $seq_verif_name;\n\n    virtual task body();\n",
+            "poll_command": "        `POLL_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "run_command": "        `uvm_do($seq_verif_name)",
+            "seq_def": "",
+            "tail_seq": "    endtask\nendclass\n",
+            "wait_command": "        `WAIT($value)",
+            "write_command": "        `WRITE_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)"
+        },
+        "NRF_TEMPLATE": {
+            "CUSTOM": "    `$c_var1(`$c_var2, ($c_var3 << `$c_var5),`$c_var4);",
+            "LOAD": "    `LOAD_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details",
+            "POLL": "    `READ_CMP_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h8);",
+            "READ": "",
+            "RUN": "    task_top.$seq_verif_name;",
+            "WAIT": "    `WAIT($value);",
+            "WRITE": "    `WRITE_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details",
+            "custom_command": "    `$c_var1(`$c_var2, ($c_var3 << `$c_var5),`$c_var4);",
+            "field_granularity": false,
+            "header_seq": "//----------------------------------------\n// Register Configuration: $seq_description\n//----------------------------------------\ntask $seq_verif_name;\n$var1\nbegin \n    $var2",
+            "load_command": "    `LOAD_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details",
+            "poll_command": "    `READ_CMP_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h8);",
+            "read_command": "",
+            "run_command": "    task_top.$seq_verif_name;",
+            "seq_def": "",
+            "tail_seq": "    $var4\n    $var5\nend\nendtask\n\n",
+            "wait_command": "    `WAIT($value);",
+            "write_command": "    `WRITE_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details"
+        },
+        "NRF_TEMPLATE_FIELD_GRANULARITY": {
+            "POLL": "        `POLL_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "RUN": "        `uvm_do($seq_verif_name)",
+            "WAIT": "        `WAIT($value)",
+            "WRITE": "        `WRITE_REG($reg_name, $field_name, $value)",
+            "field_granularity": true,
+            "header_seq": "//----------------------------------------\n// Register Configuration: $seq_description\n//----------------------------------------\nclass Granularity_$seq_verif_name;\n\n    virtual task body();\n",
+            "poll_command": "        `POLL_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "run_command": "        `uvm_do($seq_verif_name)",
+            "seq_def": "",
+            "tail_seq": "    endtask\nendclass\n",
+            "wait_command": "        `WAIT($value)",
+            "write_command": "        `WRITE_REG($reg_name, $field_name, $value)"
+        }
+    }
+}

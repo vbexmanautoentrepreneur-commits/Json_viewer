@@ -1,0 +1,4199 @@
+{
+    "Fields": {
+        "f_ipanahoodtop_RFFE__1697806959": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 1
+        },
+        "f_ipanahoodtop_RFFE__1731688744": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 6
+        },
+        "f_ipanahoodtop_RFFE__1755022538": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4
+        },
+        "f_ipanahoodtop_RFFE__1755022668": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 3
+        },
+        "f_ipanahoodtop_RFFE__1755022831": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 1
+        },
+        "f_ipanahoodtop_RFFE__1755024125": {
+            "DFT_TPR": "na",
+            "description": "Bypass the LFSR with the value in RFFE_DIG_HPPA_BYPASS_LFSR_VALUE",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_BYPASS_LFSR",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanahoodtop_RFFE__1755024165": {
+            "DFT_TPR": "na",
+            "description": "Bypass the LFSR and directly control the LFSR output with this value. Debug mode engaged when RFFE_DIG_HPPA_BYPASS_LFSR is asserted",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_BYPASS_LFSR_VALUE",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4
+        },
+        "f_ipanahoodtop_RFFE__1755024375": {
+            "DFT_TPR": "na",
+            "description": "Chooses Doherty Mode or non-Doherty Mode for the Decoder",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_DOHERTY_MODE",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanahoodtop_RFFE__1755024377": {
+            "DFT_TPR": "na",
+            "description": "Chooses NUCTEC order (0 or 1)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_NUCTEC_ORDER",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanahoodtop_RFFE__1755024534": {
+            "DFT_TPR": "na",
+            "description": "Select the HPPA main1 coarse and fine slices",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "msb[lsb]_main[0] "
+                ],
+                [
+                    "0x1",
+                    "",
+                    "msb[lsb]_aux[0]"
+                ],
+                [
+                    "0x2",
+                    "",
+                    "msb[lsb]_main[1]"
+                ],
+                [
+                    "0x3",
+                    "",
+                    "msb[lsb]_aux[1]"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_PA1MAINMUXCTRL",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 2
+        },
+        "f_ipanahoodtop_RFFE__1755024635": {
+            "DFT_TPR": "na",
+            "description": "Select the HPPA aux1 coarse and fine slices",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "msb[lsb]_main[0] "
+                ],
+                [
+                    "0x1",
+                    "",
+                    "msb[lsb]_aux[0]"
+                ],
+                [
+                    "0x2",
+                    "",
+                    "msb[lsb]_main[1]"
+                ],
+                [
+                    "0x3",
+                    "",
+                    "msb[lsb]_aux[1]"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_PA1AUXMUXCTRL",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 2
+        },
+        "f_ipanahoodtop_RFFE__1755024680": {
+            "DFT_TPR": "na",
+            "description": "Select the HPPA main2 coarse and fine slices",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "msb[lsb]_main[0] "
+                ],
+                [
+                    "0x1",
+                    "",
+                    "msb[lsb]_aux[0]"
+                ],
+                [
+                    "0x2",
+                    "",
+                    "msb[lsb]_main[1]"
+                ],
+                [
+                    "0x3",
+                    "",
+                    "msb[lsb]_aux[1]"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_PA2MAINMUXCTRL",
+            "r": "-",
+            "reset": "0x2",
+            "rw": "rw",
+            "size": 2
+        },
+        "f_ipanahoodtop_RFFE__1755024708": {
+            "DFT_TPR": "na",
+            "description": "Select the HPPA aux2 coarse and fine slices",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "msb[lsb]_main[0] "
+                ],
+                [
+                    "0x1",
+                    "",
+                    "msb[lsb]_aux[0]"
+                ],
+                [
+                    "0x2",
+                    "",
+                    "msb[lsb]_main[1]"
+                ],
+                [
+                    "0x3",
+                    "",
+                    "msb[lsb]_aux[1]"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_PA2AUXMUXCTRL",
+            "r": "-",
+            "reset": "0x3",
+            "rw": "rw",
+            "size": 2
+        },
+        "f_ipanahoodtop_RFFE__1755025290": {
+            "DFT_TPR": "na",
+            "description": "Select the source of the LO (unused)",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "from PLL"
+                ],
+                [
+                    "0x1",
+                    "",
+                    "from HPPA"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_LO_SOURCE",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanahoodtop_RFFE__1755025743": {
+            "DFT_TPR": "na",
+            "description": "Digital island test bus selection",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "Off"
+                ],
+                [
+                    "0x1",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0x2",
+                    "",
+                    "output LSBs SRC_Out on DTB"
+                ],
+                [
+                    "0x3",
+                    "",
+                    "output MSBs SRC_Out on DTB"
+                ],
+                [
+                    "0x4",
+                    "",
+                    "output test FIFO on DTB"
+                ],
+                [
+                    "0x5",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0x6",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0x7",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0x8",
+                    "",
+                    "Bypass CIC (no signal outputted on DTB)"
+                ],
+                [
+                    "0x9",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0xA",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0xB",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0xC",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0xD",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0xE",
+                    "",
+                    "unused"
+                ],
+                [
+                    "0xF",
+                    "",
+                    "unused"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_DEBUG_BUS_SELECT",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4
+        },
+        "f_ipanahoodtop_RFFE__1755070643": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 6
+        },
+        "f_ipanahoodtop_RFFE__1755071742": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "RO",
+            "cell": "na",
+            "description": "DIG HPPA digital test bus data output: lsb<7:0>",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_DEBUG_BUS_OUT_LSB",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 8
+        },
+        "f_ipanahoodtop_RFFE__1755071846": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "DIG HPPA digital test bus data output: msb<9:8>",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_DEBUG_BUS_OUT_MSB",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 2
+        },
+        "f_ipanahoodtop_RFFE__1755072546": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4
+        },
+        "f_ipanahoodtop_RFFE__1755072680": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "cell": "",
+            "description": "Controls which mode of operation is used. Valid input Codes range from 0x0 to 0x8.",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_CLKLODIVMSETTING",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4
+        },
+        "f_ipanahoodtop_RFFE__1755102537": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "description": "Ratio between the FREF and Ftarget (nominal Flo) (used in NUCTEC computation, and step size mu0 in Farrow): <7:0> bits",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_FCW_RECIPROCAL_0",
+            "r": "-",
+            "reset": "0xF0",
+            "rw": "rw",
+            "size": 8
+        },
+        "f_ipanahoodtop_RFFE__175510253701755102952": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "description": "Ratio between the FREF and Ftarget (nominal Flo) (used in NUCTEC computation, and step size mu0 in Farrow): <15:8> bits",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_FCW_RECIPROCAL_1",
+            "r": "-",
+            "reset": "0x74",
+            "rw": "rw",
+            "size": 8
+        },
+        "f_ipanahoodtop_RFFE__17551025370175510295201755102984": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "description": "Ratio between the FREF and Ftarget (nominal Flo) (used in NUCTEC computation, and step size mu0 in Farrow): <23:16> bits",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_FCW_RECIPROCAL_2",
+            "r": "-",
+            "reset": "0x3D",
+            "rw": "rw",
+            "size": 8
+        },
+        "f_ipanahoodtop_RFFE__1755102537017551029520175510298401755103015": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "description": "Ratio between the FREF and Ftarget (nominal Flo) (used in NUCTEC computation, and step size mu0 in Farrow): <31:24> bits",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_FCW_RECIPROCAL_3",
+            "r": "-",
+            "reset": "0x86",
+            "rw": "rw",
+            "size": 8
+        },
+        "f_ipanakibonbtop_RF_2000": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2001": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "enable CTRX capacitor (enable shunt switch (to be enabled only during low power PA operation)",
+            "hw": "-",
+            "name": "RFFE_INTERFACE_CTRX_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2002": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "CZTUNE capacito bank control",
+            "hw": "-",
+            "name": "RFFE_INTERFACE_CZTUNE_SET",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2003": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "enable shunt switch (to be enabled only during high power PA operation)",
+            "hw": "-",
+            "name": "RFFE_INTERFACE_SW_SHUNT_EN",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2004": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "enable series switch (to be enabled only during high power PA operation)",
+            "hw": "-",
+            "name": "RFFE_INTERFACE_SW_SERIES_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2005": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "description": "enable low power PA / LNA balun central tap filter (to be used only in RX mode)",
+            "hw": "-",
+            "name": "RFFE_INTERFACE_BALUN_LPPA_LNA_CT_FILTER_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2006": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "enable interface bias",
+            "hw": "-",
+            "name": "RFFE_INTERFACE_VBIAS_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2007": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2008": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "not used yet",
+            "hw": "-",
+            "name": "RFFE_INTERFACE_CHPPA_SET",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2009": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2010": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "Set CLNALPPA capacitor bank value. This field is also control by Digital during rffe_RCCAL",
+            "hw": "-",
+            "name": "RFFE_INTERFACE_CLNALPPA_SET",
+            "r": "-",
+            "reset": "0x24",
+            "rw": "rw",
+            "size": 6,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2013": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "eDigit Decoder enable signal (active high) (unused)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_DEC_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2014": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "1",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "reset active low",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_RESETB",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2015": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "enable (unused)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2016": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2019": {
+            "DFT_TPR": "na",
+            "description": "AM path sigma delta dither enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_AM_SD_DITHER_EN",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2020": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "description": "AM path sigma delta enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_AM_SD_EN",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2025": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_202501697032332": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2026": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 1 main slices overdrive value (applied when overdirve is enabled) and SRC_Debug_Div_Factor used to divide the fsrc clock in case of output SRC_Out on DTB (applied when overide disabled and DTB enable on RFFE_HPPA_DIG_DEBUG_BUS_SELECT 2 and 3)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_1_COARSE_MAIN_OVRD",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_202611697032332": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 2 main slices overdrive value (applied when overdirve is enabled)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_2_COARSE_MAIN_OVRD",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2027": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 1 main slices overdrive enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_1_COARSE_MAIN_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_202721697032332": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 2 main slices overdirve enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_2_COARSE_MAIN_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2028": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_202801697032352": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2029": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 1 auxiliary slices overdrive value (applied when overdirve is enabled) SRC_Debug_Shift_Factor used to select phase of fsrc clock in case of output SRC_Out on DTB",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_1_COARSE_AUX_OVRD",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_202911697032352": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 2 auxiliary slices overdrive value (applied when overdirve is enabled)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_2_COARSE_AUX_OVRD",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2030": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 1 auxiliary slices overdrive enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_1_COARSE_AUX_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_203021697032352": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 2 auxiliary slices overdrive enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_2_COARSE_AUX_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2031": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 1 sigma delta auxiliary slices overdrive value (applied when overdirve is enabled)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_1_SD_MAIN_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_203101697032364": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 2 sigma delta auxiliary slices overdrive value (applied when overdirve is enabled)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_2_SD_MAIN_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2032": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 1 sigma delta auxiliary slices overdrive enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_1_SD_MAIN_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_203211697032364": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 2 sigma delta auxiliary slices overdrive enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_2_SD_MAIN_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2033": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 1 sigma delta main slices overdrive value (applied when overdirve is enabled)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_1_SD_AUX_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_203321697032364": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 2 sigma delta main slices overdrive value (applied when overdirve is enabled)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_2_SD_AUX_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2034": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 1 sigma delta main slices overdrive enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_1_SD_AUX_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_203431686830192": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "cell": "",
+            "description": "fine delay on AM path in fractions of Tref \n00000000: 0\n00000001:Tref/256\n",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_AM_FINE_DEL",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 8,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_203431697032364": {
+            "DFT_TPR": "na",
+            "description": "HPPA PA 2 sigma delta main slices overdrive enable",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SLICE_PA_2_SD_AUX_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2035": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2036": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Dual Mode LSH": "yes",
+            "Port Ctrl List": "mcu",
+            "description": "HPPA path N enable",
+            "hw": "-",
+            "name": "RFFE_HPPA_PATH_N_EN",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2037": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Dual Mode LSH": "yes",
+            "Port Ctrl List": "mcu",
+            "description": "HPPA path P enable",
+            "hw": "-",
+            "name": "RFFE_HPPA_PATH_P_EN",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2038": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "5",
+            "Dual Mode LSH": "yes",
+            "description": "HPPA clock dead-zone or overlap amplitude control",
+            "hw": "-",
+            "name": "RFFE_HPPA_LO_OVL_OR_DZ_TRIM",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2039": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "1",
+            "Dual Mode LSH": "yes",
+            "description": "HPPA clock dead-zone or overlap selection (1=dead-zone, 0=overlap)",
+            "hw": "-",
+            "name": "RFFE_HPPA_LO_OVL_OR_DZ",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2040": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2041": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA core enable",
+            "hw": "-",
+            "name": "RFFE_LNA_CORE_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2042": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LPPA level shifters enable",
+            "hw": "-",
+            "name": "RFFE_LPPA_LVLSH_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2043": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LPPA enable",
+            "hw": "-",
+            "name": "RFFE_LPPA_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2044": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "enable Ptat Peak Detector current",
+            "hw": "-",
+            "name": "RFFE_LPPA_LNA_PTAT_ENABLE_PKDET",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2045": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "antenna peak detector enable",
+            "hw": "-",
+            "name": "RFFE_ANT_PKDET_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2046": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "Start Calibration",
+            "hw": "-",
+            "name": "RFFE_CAL_START",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2047": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "calibration enable",
+            "hw": "-",
+            "name": "RFFE_CAL_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2048": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "enable Ptat TX current",
+            "hw": "-",
+            "name": "RFFE_LPPA_LNA_PTAT_ENABLE_TX",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2049": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "enable Ptat RX current",
+            "hw": "-",
+            "name": "RFFE_LPPA_LNA_PTAT_ENABLE_RX",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2050": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "enable Ptat current (used for LNA and low power PA)",
+            "hw": "-",
+            "name": "RFFE_LPPA_LNA_PTAT_ENABLE",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2051": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "bias enable",
+            "hw": "-",
+            "name": "RFFE_MXR_BIAS_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2052": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2053": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "control slice 0 of LPPA (for debug only). To be muxed with LPPA slices control signal comming from DSP: RFFE_DIG_LPPA_PWR_SS. Multiplexer selection signal is RFFE_DIG_LPPA_PWR_SS_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_DIG_LPPA_PWR_SS_LSB_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2054": {
+            "DFT_TPR": "na",
+            "cell": "",
+            "description": "mux selection signal to define wich signal is used control the LPPA slices. 0: slices are controlled by the DSP (RFFE_DIG_LPPA_PWR_SS); 1: the slices are controlled by the registers RFFE_DIG_LPPA_PWR_SS_MSB_OVRD and RFFE_DIG_LPPA_PWR_SS_LSB_OVRD. Also Used to controll the bypass mode inside the LPPA embeded digital.",
+            "hw": "-",
+            "name": "RFFE_DIG_LPPA_PWR_SS_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2056": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "LPPA input selection: 0: LO signal from main PLL; 1 = 800Mhz signal from AUX PLL for IQ calibration",
+            "hw": "-",
+            "name": "RFFE_LPPA_INPUT_SEL",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2057": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "control slices 8 to 1 of LPPA (for debug only). To be muxed with LPPA slices control signal comming from DSP: RFFE_DIG_LPPA_SLICE. Multiplexer selection signal is RFFE_DIG_LPPA_SLICE_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_DIG_LPPA_PWR_SS_MSB_OVRD",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 8,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2058": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2059": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "half ptat current (low power mode)",
+            "hw": "-",
+            "name": "RFFE_LNA_IPTAT_HALF",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2060": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "LNA weak power down (unused/noConn)",
+            "hw": "-",
+            "name": "RFFE_LNA_WEAK_PDWN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2061": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "LNA rmatch enable (unused/noConn)",
+            "hw": "-",
+            "name": "RFFE_LNA_RMATCH_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2062": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2063": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "peak detector threshold",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_TH",
+            "r": "-",
+            "reset": "0x3",
+            "rw": "rw",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2064": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "bias trim",
+            "hw": "-",
+            "name": "RFFE_LNA_BIAS_TRIM",
+            "r": "-",
+            "reset": "0x3",
+            "rw": "rw",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2065": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2066": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "rmatch trim (Unused/noConn)",
+            "hw": "-",
+            "name": "RFFE_LNA_RMATCH_TRIM",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2067": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA high gain slices control signal selection: 0 = from AGC signal RFFE_LNA_HIGH_GAIN_SLICE; 1 = from register RFFE_LNA_HIGH_GAIN_SLICE_OVRD",
+            "hw": "-",
+            "name": "RFFE_LNA_HIGH_GAIN_SLICE_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2068": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA high gain attenuator control signal selection: 0 = from AGC signal RFFE_LNA_HIGH_GAIN_ATT; 1 = from register RFFE_LNA_HIGH_GAIN_ATT_OVRD",
+            "hw": "-",
+            "name": "RFFE_LNA_HIGH_GAIN_ATT_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2069": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA low gain slices control signal selection: 0 = from AGC signal RFFE_LNA_LOW_GAIN_SLICE; 1 = from register RFFE_LNA_LOW_GAIN_SLICE_OVRD",
+            "hw": "-",
+            "name": "RFFE_LNA_LOW_GAIN_SLICE_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2070": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA low gain attenuator control signal selection: 0 = from AGC signal RFFE_LNA_LOW_GAIN_ATT; 1 = from register RFFE_LNA_LOW_GAIN_ATT_OVRD",
+            "hw": "-",
+            "name": "RFFE_LNA_LOW_GAIN_ATT_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2071": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA peak detector slices control signal selection: 0 = from AGC signal RFFE_LNA_PKDET_SLICE; 1 = from register RFFE_LNA_PKDET_SLICE_OVRD",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_SLICE_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2072": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA peak detector slices enable signal selection: 0 = from AGC signal RFFE_LNA_PKDET_SLICE_EN; 1 = from register RFFE_LNA_PKDET_SLICE_EN_OVRD",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_SLICE_EN_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2073": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA peak detector core enable control signal selection: 0 = from AGC signal RFFE_LNA_PKDET_CORE_EN; 1 = from register RFFE_LNA_PKDET_CORE_EN_OVRD",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_CORE_EN_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2074": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA peak detector reset signal selection: 0 = from AGC signal RFFE_LNA_PKDET_RST_EN; 1 = from register RFFE_LNA_PKDET_RST_EN_OVRD",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_RST_OVRD_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2075": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA high gain attenuator (for debug only). To be muxed with signal comming from AGC: RFFE_LNA_HIGH_GAIN_ATT. Multiplexer selection signal is RFFE_LNA_HIGH_GAIN_ATT_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_LNA_HIGH_GAIN_ATT_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2076": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA high gain slices (for debug only). To be muxed with signal comming from AGC: RFFE_LNA_HIGH_GAIN_SLICE. Multiplexer selection signal is RFFE_LNA_HIGH_GAIN_SLICE_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_LNA_HIGH_GAIN_SLICE_OVRD",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 6,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2077": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA peak detector slices (for debug only). To be muxed with signal comming from AGC: RFFE_LNA_HIGH_PKDET_SLICE. Multiplexer selection signal is RFFE_LNA_HIGH_PKDET_SLICE_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_SLICE_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2078": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA low gain attenuator (for debug only). To be muxed with signal comming from AGC: RFFE_LNA_LOW_GAIN_ATT. Multiplexer selection signal is RFFE_LNA_LOW_GAIN_ATT_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_LNA_LOW_GAIN_ATT_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2079": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA low gain slices (for debug only). To be muxed with signal comming from AGC: RFFE_LNA_LOW_GAIN_SLICE. Multiplexer selection signal is RFFE_LNA_LOW_GAIN_SLICE_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_LNA_LOW_GAIN_SLICE_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2080": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2081": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA peak detector slice enable (for debug only). To be muxed with signal comming from AGC: RFFE_LNA_PKDET_SLICE_EN. Multiplexer selection signal is RFFE_LNA_PKDET_SLICE_EN_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_SLICE_EN_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2082": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA peak detector reset (for debug only). To be muxed with signal comming from AGC: RFFE_LNA_PKDET_RST. Multiplexer selection signal is RFFE_LNA_PKDET_RST_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_RST_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2083": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "description": "LNA peak detector core enable (for debug only). To be muxed with signal comming from AGC: RFFE_LNA_PKDET_CORE_EN. Multiplexer selection signal is RFFE_LNA_PKDET_CORE_EN_OVRD_EN",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_CORE_EN_OVRD",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2084": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2085": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "bias trim",
+            "hw": "-",
+            "name": "RFFE_MXR_BIAS_TRIM",
+            "r": "-",
+            "reset": "0x3",
+            "rw": "rw",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2086": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2087": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "Set PTAT trimmable resistance value. This value is also controled by Digital during RFFE_RCCAL",
+            "hw": "-",
+            "name": "RFFE_LPPA_LNA_PTAT_RES_TRIM",
+            "r": "-",
+            "reset": "0x0C",
+            "rw": "rw",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2088": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 7,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2089": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "antenna peak detector attenuator enable",
+            "hw": "-",
+            "name": "RFFE_ANT_PKDET_ATT_EN",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2090": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 6,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2091": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "R cal enable",
+            "hw": "-",
+            "name": "RFFE_CAL_RCAL_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2092": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "C cal enabe",
+            "hw": "-",
+            "name": "RFFE_CAL_CCAL_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2093": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 2,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2094": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "dcbus selection",
+            "enumerate": [
+                [
+                    "0x01",
+                    "",
+                    "LNA Vcasc_pm"
+                ],
+                [
+                    "0x02",
+                    "",
+                    "LNA Vbias_pm"
+                ],
+                [
+                    "0x03",
+                    "",
+                    "LNA Vcasc_wbd_pm"
+                ],
+                [
+                    "0x04",
+                    "",
+                    "LNA Vbias_wbd_pm"
+                ],
+                [
+                    "0x05",
+                    "",
+                    "LNA cm_cma_p"
+                ],
+                [
+                    "0x06",
+                    "",
+                    "LNA lna_a_f_p"
+                ],
+                [
+                    "0x07",
+                    "",
+                    "LNA lna_w_a_f_p"
+                ],
+                [
+                    "0x08",
+                    "",
+                    "LNA Vref_dc"
+                ],
+                [
+                    "0x09",
+                    "",
+                    "LNA Vref_rf"
+                ],
+                [
+                    "0x0A",
+                    "",
+                    "LNA_VSS"
+                ],
+                [
+                    "0x0B",
+                    "",
+                    "LNA_VSS"
+                ],
+                [
+                    "0x0C",
+                    "",
+                    "Not Used"
+                ],
+                [
+                    "0x0D",
+                    "",
+                    "Not Used"
+                ],
+                [
+                    "0x0E",
+                    "",
+                    "MIXER Vb_mixer: mixer LO bias"
+                ],
+                [
+                    "0x0F",
+                    "",
+                    "Not Used"
+                ],
+                [
+                    "0x10",
+                    "",
+                    "Not Used"
+                ],
+                [
+                    "0x11",
+                    "",
+                    "LPPA VSS"
+                ],
+                [
+                    "0x12",
+                    "",
+                    "LPPA VDD after power switch"
+                ],
+                [
+                    "0x13",
+                    "",
+                    "LPPA Vbias cascode"
+                ],
+                [
+                    "0x14",
+                    "",
+                    "PTAT VSS"
+                ],
+                [
+                    "0x15",
+                    "",
+                    "PTAT Vres (voltage across degeneration resistance)"
+                ],
+                [
+                    "0x16",
+                    "",
+                    "PTAT Vbias cascode nMOS"
+                ],
+                [
+                    "0x17",
+                    "",
+                    "PTAT Vbias cascode pMOS"
+                ],
+                [
+                    "0x18",
+                    "",
+                    "RCCAL VSS"
+                ],
+                [
+                    "0x19",
+                    "",
+                    "RCCAL comparator 2nd stage common mode input voltage"
+                ],
+                [
+                    "0x1A",
+                    "",
+                    "RCCAL trimmed resistor voltage"
+                ],
+                [
+                    "0x1B",
+                    "",
+                    "RCCAL comparator refrence voltage for resistor trim"
+                ],
+                [
+                    "0x1C",
+                    "",
+                    "RCCAL comparator refrence voltage for capacitor trim"
+                ],
+                [
+                    "0x1D",
+                    "",
+                    "PKDET Vref"
+                ],
+                [
+                    "0x1E",
+                    "",
+                    "PKDET Vout"
+                ],
+                [
+                    "0x1F",
+                    "",
+                    "Not Used"
+                ],
+                [
+                    "0x20 to 0x2F",
+                    "",
+                    "Not Used"
+                ],
+                [
+                    "0x30",
+                    "",
+                    "Not Used"
+                ],
+                [
+                    "0x31",
+                    "",
+                    "INTERFACE Vbias prot"
+                ],
+                [
+                    "0x32",
+                    "",
+                    "INTERFACE Vbias sw"
+                ],
+                [
+                    "0x33 to 0x3F",
+                    "",
+                    "Not Used"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DCBUS_SEL",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 6,
+            "values": "{}"
+        },
+        "f_ipanakibonbtop_RF_2095": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "Spare ctrl signals",
+            "hw": "-",
+            "name": "RFFE_SPARE_CTRL",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "rw",
+            "size": 8,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2096": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2097": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_1V5",
+            "description": "SPARE CTRL on 1V55",
+            "hw": "-",
+            "name": "RFFE_SPARE_CTRL_1V5",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2098": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 6,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2099": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "description": "LNA peak detector output",
+            "hw": "-",
+            "name": "RFFE_LNA_PKDET_OUT",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2100": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "description": "comparator output",
+            "hw": "-",
+            "name": "RFFE_CAL_CMPOUT",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2101": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "description": "Cap cal value",
+            "hw": "-",
+            "name": "RFFE_CAL_CTRIM",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "r-",
+            "size": 6,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2102": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "description": "cal end",
+            "hw": "-",
+            "name": "RFFE_CAL_END",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2103": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 3,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2104": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "description": "Res cal value",
+            "hw": "-",
+            "name": "RFFE_CAL_RTRIM",
+            "r": "-",
+            "reset": "0x00",
+            "rw": "r-",
+            "size": 5,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2105": {
+            "description": "Reserved",
+            "hw": "-",
+            "name": "RESERVED",
+            "r": "--",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF_2106": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_ls",
+            "description": "spare status bits",
+            "hw": "-",
+            "name": "RFFE_SPARE_STATUS",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 4,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF__1686830479": {
+            "DFT_TPR": "na",
+            "description": "Bypass Farrow + Horner interpolator 1st stage",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_DEC_IN_MUX_CFG",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop_RF__168683088021686831318": {
+            "DFT_TPR": "na",
+            "description": "HPPA Digital Island LO clock edge selection (unused)",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "LO clock is in phase"
+                ],
+                [
+                    "0x1",
+                    "",
+                    "LO clock is inverted"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_LO_INV",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop_RF__168683101511686831318": {
+            "DFT_TPR": "na",
+            "description": "HPPA Digital Island CLK_CKREF edge selection",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "CKREF used without inversion - Data capture on rising edge - Full-Cycle between NRF and HPPA digital island"
+                ],
+                [
+                    "0x1",
+                    "",
+                    "CKREF used with inversion - Data capture on falling edge - Half-Cycle between NRF and HPPA digital island"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_REF_CLK_INV",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop_RF__1686831069": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "eDigit LO div enable signal (active high) (unused)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_DIV_LO_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop_RF__1686831141": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "eDigit NUC enable signal (active high)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_NUC_EN",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop_RF__1686831164": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "eDigit SRC enable signal (active high) (unused)",
+            "hw": "-",
+            "name": "RFFE_DIG_HPPA_SRC_EN",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        },
+        "f_ipanakibonbtop_RF__1686834084": {
+            "DFT_TPR": "na",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "description": "LPPA rump-up/down complete acknowledge signal",
+            "hw": "-",
+            "name": "RFFE_DIG_LPPA_COMPLETE",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "r-",
+            "size": 1
+        },
+        "f_ipanakibonbtop_RF__1687159292": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "Counter increment / decrement (1, 2, 4, 8). Allows slowing down the ramp duration",
+            "hw": "-",
+            "name": "RFFE_DIG_LPPA_INC",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 2
+        },
+        "f_ipanakibonbtop_RF__1687159389": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "1",
+            "Port Ctrl List": "mcu",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LPPA digital reset",
+            "hw": "-",
+            "name": "RFFE_DIG_LPPA_ARST",
+            "r": "-",
+            "reset": "0x1",
+            "rw": "rw",
+            "size": 1,
+            "values": {}
+        },
+        "f_ipanakibonbtop_RF__1687159468": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "Configures the division factor (1 ... 16) to be applied to the input clock CKVDAM",
+            "hw": "-",
+            "name": "RFFE_DIG_LPPA_POST_DIV",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 4
+        },
+        "f_ipanakibonbtop_RF__1687159494": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "description": "LPPA digital clock polarity selection for output power data",
+            "enumerate": [
+                [
+                    "0x0",
+                    "",
+                    "CLK_PWR is internally inverted, PWR data output on CKVDAM falling edge"
+                ],
+                [
+                    "0x1",
+                    "",
+                    "CLK_PWR is internally in-phase, PWR data output on CKVDAM rising edge"
+                ]
+            ],
+            "hw": "-",
+            "name": "RFFE_DIG_LPPA_PWR_INV",
+            "r": "-",
+            "reset": "0x0",
+            "rw": "rw",
+            "size": 1
+        }
+    },
+    "General": {
+        "base_address": "0x00000100",
+        "blockprefix": "ipanahoodtop_RFFE_",
+        "date": "2026-02-25 14:27:45",
+        "default_configs": {},
+        "field_options": {
+            "Ana Name": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Bus Name": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Cell": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Clock Domain": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Config": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "DFT_TPR": [
+                "True",
+                "any",
+                [
+                    "na",
+                    "NRFD"
+                ],
+                "True",
+                "na"
+            ],
+            "DFT_TPR_value": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Description": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "ENUM": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "FSM Name": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Filter": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "HW Update": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Note": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Option": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Port Ctrl List": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "RW Mode": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Reset Mode": [
+                "True",
+                "any",
+                [],
+                "True"
+            ],
+            "Reset Value": [
+                "True",
+                "hexa",
+                [],
+                "True"
+            ],
+            "SWBits": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "SWField": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Size": [
+                "True",
+                "decimal",
+                [],
+                "True"
+            ],
+            "Spec": [
+                "False",
+                "any",
+                [],
+                "False"
+            ],
+            "Waveform": [
+                "True",
+                "any",
+                [],
+                "False"
+            ]
+        },
+        "history_enable": 0,
+        "identical_field_names_enable": 1,
+        "ie_options": {
+            "Cell": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Clock Domain": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Comment": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "DFT_TPR": [
+                "True",
+                "any",
+                [
+                    "na",
+                    "NRFD"
+                ],
+                "True",
+                "na"
+            ],
+            "DFT_TPR_value": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Description": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Direction": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Group": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Isolation": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Name": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Pad": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Port Ctrl List": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Power domain": [
+                "False",
+                "any",
+                "",
+                "False"
+            ],
+            "Reset Value": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Size": [
+                "True",
+                "any",
+                "",
+                "False"
+            ],
+            "Type": [
+                "True",
+                "any",
+                [],
+                "False"
+            ]
+        },
+        "if_display_enable": 1,
+        "project": "HOOD",
+        "reg_align": "Byte",
+        "reg_options": {
+            "Access": [
+                "True",
+                "any",
+                [],
+                "False"
+            ],
+            "Address Offset": [
+                "True",
+                "any",
+                [],
+                "False"
+            ]
+        },
+        "reset_info": "",
+        "rmi_last_use": "2.7.1",
+        "rmi_starter": "Unknown",
+        "sequence_options": {
+            "CUSTOM": [
+                "True",
+                "Use Variables",
+                [],
+                "False"
+            ],
+            "LOAD": [
+                "True",
+                "Use Registers",
+                [],
+                "False"
+            ],
+            "POLL": [
+                "True",
+                "Use Registers",
+                [],
+                "False"
+            ],
+            "RAMP_INT": [
+                "True",
+                "Use Interfaces",
+                [],
+                "False"
+            ],
+            "READ": [
+                "True",
+                "Use Registers",
+                [],
+                "False"
+            ],
+            "READ_INT": [
+                "True",
+                "Use Interfaces",
+                [],
+                "False"
+            ],
+            "RUN": [
+                "True",
+                "Use Sequences",
+                [],
+                "False"
+            ],
+            "WAIT": [
+                "True",
+                "Use Value",
+                [],
+                "False"
+            ],
+            "WRITE": [
+                "True",
+                "Use Registers",
+                [],
+                "False"
+            ],
+            "WRITE_INT": [
+                "True",
+                "Use Interfaces",
+                [],
+                "False"
+            ]
+        },
+        "sfr_rel_date_field": "",
+        "sfr_rel_maj_field": "",
+        "sfr_rel_min_field": "",
+        "sfr_update_enable": 0,
+        "version": 153
+    },
+    "History": {},
+    "Interface_elements": {
+        "ie_RF_1624622100": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "HPPA 2.4GHz LO signal 50% duty cycle",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "CLK_TXHPLO_N",
+            "size": 1,
+            "type": "clock",
+            "cell":""
+        },
+        "ie_RF_1624622114": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "HPPA 2.4GHz LO signal 50% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_TXHPLO_P",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1624622133": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "LPPA 2.4GHz LO signal 25% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_TXLPLO_PB",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1624622148": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "LPPA 2.4GHz LO signal 25% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_TXLPLO_P",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1624622164": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "Mixer 2.4GHz LO signal 25% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_RXLO_000DEG",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1624622172": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "Mixer 2.4GHz LO signal 25% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_RXLO_270DEG",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1624622179": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "Mixer 2.4GHz LO signal 25% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_RXLO_090DEG",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1624622185": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "Mixer 2.4GHz LO signal 25% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_RXLO_180DEG",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1641454687": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "HPPA 2.4GHz LO shield",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_TXHPLO_SHIELD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_RF_1641454694": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "LPPA 2.4GHz LO shield",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_TXLPLO_SHIELD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_RF_1641454697": {
+            "DFT_TPR": "na",
+            "comment": "",
+            "description": "Mixer 2.4GHz LO shield",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_RXLO_SHIELD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_RF_1641454896": {
+            "DFT_TPR": "na",
+            "description": "Reference clock",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CKREF_DPLL",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1641455006": {
+            "DFT_TPR": "na",
+            "description": "Reference clock Shield",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CKREF_DPLL_SHIELD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_RF_1641455114": {
+            "DFT_TPR": "na",
+            "description": "64MHz clock",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CKD",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1641455156": {
+            "DFT_TPR": "na",
+            "description": "64MHz clock shield",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CKD_SHIELD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_RF_1641455218": {
+            "DFT_TPR": "na",
+            "description": "1uA trimmed current (10% accuracy)",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "IP_BIAS_5U",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_RF_1641455456": {
+            "DFT_TPR": "na",
+            "description": "15uA trimmed current (generated by taking half of the 30uA 1% trimmed current)",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "IP_BIAS_15U",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_RF_1641456036": {
+            "DFT_TPR": "na",
+            "description": "HPPA digital island supply ",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "VDDDIG",
+            "reset_val": "",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_RF_1641456095": {
+            "DFT_TPR": "na",
+            "description": "LPPA, LNA, PTAT and RCCAL supply",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "VDDTRX",
+            "reset_val": "",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_RF_1641456290": {
+            "DFT_TPR": "na",
+            "description": "RF (Antenna) connected to RF PAD",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "ANT",
+            "reset_val": "",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_RF_1641456325": {
+            "DFT_TPR": "na",
+            "description": "VSS PADs (8bits used for RFFE; verif hack 8 replaced by 1)",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "VSS_INT",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_RF_1641456671": {
+            "DFT_TPR": "na",
+            "description": "Mixer IP output current ",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "BB_IP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_RF_1641456747": {
+            "DFT_TPR": "na",
+            "description": "Mixer IN output current ",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "BB_IN",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_RF_1641456748": {
+            "DFT_TPR": "na",
+            "description": "Mixer QP output current ",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "BB_QP",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_RF_1641456749": {
+            "DFT_TPR": "na",
+            "description": "Mixer QN output current ",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "BB_QN",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_RF_1641456751": {
+            "DFT_TPR": "na",
+            "description": "Mixer output currents shield ",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "BB_SHIELD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_RF_1641456894": {
+            "DFT_TPR": "na",
+            "description": "DCBUS output",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "RFFE_DCBUS_OUT",
+            "reset_val": "",
+            "size": 1,
+            "type": "analog"
+        },
+        "ie_RF_1641457197": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "dsp",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "AM control world signal comming from DSP",
+            "direction": "Input",
+            "group": "",
+            "name": "RFFE_DIG_HPPA_AMCW",
+            "reset_val": "0x000",
+            "size": 12,
+            "type": "data"
+        },
+        "ie_RF_1641457264": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "dsp",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "FM control world signal comming from DSP",
+            "direction": "Input",
+            "group": "",
+            "name": "RFFE_DIG_HPPA_FMCW",
+            "reset_val": "0x00000",
+            "size": 17,
+            "type": "data"
+        },
+        "ie_RF_1645523940": {
+            "DFT_TPR": "na",
+            "description": "currents shield",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "I_SHIELD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_RF_1645525420": {
+            "DFT_TPR": "na",
+            "description": "LPPA 2.4GHz LO signal 25% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_TXLPLO_N",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1645525422": {
+            "DFT_TPR": "na",
+            "description": "LPPA 2.4GHz LO signal 25% duty cycle",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CLK_TXLPLO_NB",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_RF_1645525625": {
+            "DFT_TPR": "na",
+            "description": "1.55V power supply",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "VDDREF",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanahoodtop_RFFE_1697719196": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "RFFE_DIG_HPPA_DFT_SCAN_IN",
+            "size": 10
+        },
+        "ie_ipanahoodtop_RFFE_1697719221": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "RFFE_DIG_HPPA_DFT_RST_N",
+            "size": 1
+        },
+        "ie_ipanahoodtop_RFFE_1697719224": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "RFFE_DIG_HPPA_DFT_CLK",
+            "size": 1
+        },
+        "ie_ipanahoodtop_RFFE_1697719226": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "RFFE_DIG_HPPA_DFT_MODE",
+            "size": 1
+        },
+        "ie_ipanahoodtop_RFFE_1697719234": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "RFFE_DIG_HPPA_DFT_SHIFT_EN",
+            "size": 1
+        },
+        "ie_ipanahoodtop_RFFE_1697719236": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "RFFE_DIG_HPPA_DFT_ANA_ISO",
+            "size": 1
+        },
+        "ie_ipanahoodtop_RFFE_1697719298": {
+            "DFT_TPR": "na",
+            "cell": "na",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "RFFE_DIG_HPPA_DFT_SCAN_OUT",
+            "size": 10
+        },
+        "ie_ipanahoodtop_RFFE_1697806470": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "dsp",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "Sets the counter polarity\n=1: upward\n=0: downward\n",
+            "direction": "Input",
+            "name": "RFFE_DIG_LPPA_POL",
+            "reset_val": "0x1",
+            "size": 1,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_RFFE_1697807032": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LPPA rump-up/down start",
+            "direction": "Input",
+            "name": "RFFE_DIG_LPPA_START",
+            "reset_val": "0x0",
+            "size": 1,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_RFFE_1715678354": {
+            "DFT_TPR": "na",
+            "description": "HPPA supply",
+            "direction": "Output",
+            "group": "Internal",
+            "name": "VDDHPPA",
+            "size": 1,
+            "type": "power"
+        },
+        "ie_ipanahoodtop_RFFE_1755006373": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "dsp",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "FREF Clock timed Enable signal from the modem (from CLK_CKPLLDIG clock domain)",
+            "direction": "Input",
+            "name": "RFFE_DIG_HPPA_ACC_EN",
+            "reset_val": "0x0",
+            "size": 1,
+            "type": "ctrl"
+        },
+        "ie_ipanahoodtop_RFFE_1755025976": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "dig testbus",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "description": "DIG HPPA digital test bus data output",
+            "direction": "Output",
+            "group": "RFFE_TEST",
+            "name": "RFFE_DIG_HPPA_DEBUG_BUS_OUT",
+            "reset_val": "0x000",
+            "size": 10,
+            "type": "data"
+        },
+        "ie_ipanahoodtop_RFFE_1755026174": {
+            "DFT_TPR": "na",
+            "Port Ctrl List": "dig testbus",
+            "cell": "ipanasharedlvlsh_a2d_hs",
+            "description": "DIG HPPA digital test bus clock output",
+            "direction": "Output",
+            "group": "RFFE_TEST",
+            "name": "RFFE_DIG_HPPA_DEBUG_BUS_CLK",
+            "reset_val": "0x0",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_ipanakibonbtop_RF_1652953142": {
+            "DFT_TPR": "na",
+            "description": "AMCW, FMCW and ACC_EN control world signals shield",
+            "direction": "Input",
+            "group": "internal",
+            "name": "RFFE_DIG_HPPA_AMCW_SHIELD",
+            "reset_val": "",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanakibonbtop_RF_1654755595": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "Port Ctrl List": "dsp",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LPPA slices control signal comming RFFE_DIG_LPPA_PWR_SS multiplexer output. The multiplexer inputs are the slices control signal comming from DSP: RFFE_DIG_LPPA_PWR_SS and the debug signals RFFE_DIG_LPPA_PWR_SS_MSB_OVRD and RFFE_DIG_LPPA_PWR_SS_LSB_OVRD. The multiplexer selection signal is RFFE_DIG_LPPA_PWR_SS_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_DIG_LPPA_PWR_SS",
+            "reset_val": "0x000",
+            "size": 9,
+            "type": "data"
+        },
+        "ie_ipanakibonbtop_RF_1657543737": {
+            "DFT_TPR": "na",
+            "description": "800MHz clock from AUX PLL",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CKAUX_800M",
+            "size": 1
+        },
+        "ie_ipanakibonbtop_RF_1659968161": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA high gain slice control signal comming RFFE_LNA_HIGH_GAIN_SLICE multiplexer output. The multiplexer inputs are the high gain slice control signal comming from AGC: RFFE_LNA_HIGH_GAIN_SLICE and the debug signal RFFE_LNA_HIGH_GAIN_SLICE_OVRD. The multiplexer selection signal is RFFE_LNA_HIGH_GAIN_SLICE_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_LNA_HIGH_GAIN_SLICE",
+            "reset_val": "0x00",
+            "size": 6,
+            "type": "data"
+        },
+        "ie_ipanakibonbtop_RF_1659968191": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA high gain attenuator control signal comming RFFE_LNA_HIGH_GAIN_ATT multiplexer output. The multiplexer inputs are the high gain attenuator control signal comming from AGC: RFFE_LNA_HIGH_GAIN_ATT and the debug signal RFFE_LNA_HIGH_GAIN_ATT_OVRD. The multiplexer selection signal is RFFE_LNA_HIGH_GAIN_ATT_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_LNA_HIGH_GAIN_ATT",
+            "reset_val": "0x2",
+            "size": 2
+        },
+        "ie_ipanakibonbtop_RF_1659968195": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA low gain slice control signal comming RFFE_LNA_LOW_GAIN_SLICE multiplexer output. The multiplexer inputs are the low gain slice control signal comming from AGC: RFFE_LNA_LOW_GAIN_SLICE and the debug signal RFFE_LNA_LOW_GAIN_SLICE_OVRD. The multiplexer selection signal is RFFE_LNA_LOW_GAIN_SLICE_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_LNA_LOW_GAIN_SLICE",
+            "reset_val": "0x1",
+            "size": 2
+        },
+        "ie_ipanakibonbtop_RF_1659968197": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA low gain attenuator control signal comming RFFE_LNA_LOW_GAIN_ATT multiplexer output. The multiplexer inputs are the low gain attenuator control signal comming from AGC: RFFE_LNA_LOW_GAIN_ATT and the debug signal RFFE_LNA_LOW_GAIN_ATT_OVRD. The multiplexer selection signal is RFFE_LNA_LOW_GAIN_ATT_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_LNA_LOW_GAIN_ATT",
+            "reset_val": "0x3",
+            "size": 2
+        },
+        "ie_ipanakibonbtop_RF_1659968198": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA peak detector slice control signal comming RFFE_LNA_PKDET_SLICE multiplexer output. The MUX inputs are the peak detector slice control signal comming from AGC: RFFE_LNA_PKDET_SLICE and the debug signal RFFE_LNA_PKDET_SLICE_OVRD. The multiplexer selection signal is RFFE_LNA_PKDET_SLICE_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_LNA_PKDET_SLICE",
+            "reset_val": "0x1",
+            "size": 4
+        },
+        "ie_ipanakibonbtop_RF_1659968199": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA peak detector slice enable signal comming RFFE_LNA_PKDET_SLICE_EN multiplexer output. The multiplexer inputs are the peak detector slice enable signal comming from AGC: RFFE_LNA_PKDET_SLICE_EN and the debug signal RFFE_LNA_PKDET_SLICE_EN_OVRD. The multiplexer selection signal is RFFE_LNA_PKDET_SLICE_EN_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_LNA_PKDET_SLICE_EN",
+            "reset_val": "0x0",
+            "size": 1
+        },
+        "ie_ipanakibonbtop_RF_1659968200": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "0",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA peak detector core enable signal comming RFFE_LNA_PKDET_CORE_EN multiplexer output. The multiplexer inputs are the peak detector core enable signal comming from AGC: RFFE_LNA_PKDET_CORE_EN and the debug signals RFFE_LNA_PKDET_CORE_EN_OVRD. The multiplexer selection signal is RFFE_LNA_PKDET_CORE_EN_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_LNA_PKDET_CORE_EN",
+            "reset_val": "0x0",
+            "size": 1
+        },
+        "ie_ipanakibonbtop_RF_1659968201": {
+            "DFT_TPR": "NRFD",
+            "DFT_TPR_value": "1",
+            "cell": "ipanasharedlvlsh_d2a_hs",
+            "description": "LNA peak detector reset signal comming RFFE_LNA_PKDET_RST multiplexer output. The multiplexer inputs are the peak detector reset signal comming from AGC: RFFE_LNA_PKDET_RST and the debug signal RFFE_LNA_PKDET_RST_MUX. The multiplexer selection signal is RFFE_LNA_PKDET_RST_OVRD_EN.",
+            "direction": "Input",
+            "name": "RFFE_LNA_PKDET_RST",
+            "reset_val": "0x1",
+            "size": 1
+        },
+        "ie_ipanakibonbtop_RF_1686832580": {
+            "DFT_TPR": "na",
+            "description": "High Frequency clock (<= 310MHz) for LPPA rump-up/down. Negative phase",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CKVDAM_N",
+            "size": 1,
+            "type": "clock"
+        },
+        "ie_ipanakibonbtop_RF_1686832710": {
+            "DFT_TPR": "na",
+            "description": "CKVDAM clock shield",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CKVDAM_SHIELD",
+            "size": 1,
+            "type": "ground"
+        },
+        "ie_ipanakibonbtop_RF_1686864297": {
+            "DFT_TPR": "na",
+            "description": "1uA trimmed current (10% accuracy)",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "IP_BIAS_1U",
+            "size": 5,
+            "type": "analog"
+        },
+        "ie_ipanakibonbtop_RF_1686897768": {
+            "DFT_TPR": "na",
+            "description": "High Frequency clock (<= 310MHz) for LPPA rump-up/down. Positive phase",
+            "direction": "Input",
+            "group": "Internal",
+            "name": "CKVDAM_P",
+            "size": 1,
+            "type": "clock"
+        }
+    },
+    "Interface_groups": {
+        "ig_RF_1624621455": {
+            "elem_list": [
+                "ie_RF_1624622100",
+                "ie_RF_1624622114",
+                "ie_RF_1641454687",
+                "ie_RF_1645525420",
+                "ie_RF_1645525422",
+                "ie_RF_1624622148",
+                "ie_RF_1624622133",
+                "ie_RF_1641454694",
+                "ie_RF_1624622164",
+                "ie_RF_1624622179",
+                "ie_RF_1624622185",
+                "ie_RF_1624622172",
+                "ie_RF_1641454697"
+            ],
+            "name": "RFFE_INTERFACE_LO"
+        },
+        "ig_RF_1641454850": {
+            "elem_list": [
+                "ie_RF_1641454896",
+                "ie_RF_1641455006",
+                "ie_RF_1641455114",
+                "ie_RF_1641455156",
+                "ie_ipanakibonbtop_RF_1686897768",
+                "ie_ipanakibonbtop_RF_1686832580",
+                "ie_ipanakibonbtop_RF_1686832710"
+            ],
+            "name": "RFFE_INTERFACE_CLK"
+        },
+        "ig_RF_1641455198": {
+            "elem_list": [
+                "ie_ipanakibonbtop_RF_1686864297",
+                "ie_RF_1641455218",
+                "ie_RF_1641455456",
+                "ie_RF_1645523940"
+            ],
+            "name": "RFFE_INTERFACE_CURRENTS"
+        },
+        "ig_RF_1641455966": {
+            "elem_list": [
+                "ie_RF_1641456036",
+                "ie_RF_1641456095",
+                "ie_RF_1641456290",
+                "ie_RF_1641456325",
+                "ie_ipanahoodtop_RFFE_1715678354",
+                "ie_RF_1645525625"
+            ],
+            "name": "RFFE_INTERFACE_SUPPLY"
+        },
+        "ig_RF_1641456643": {
+            "elem_list": [
+                "ie_RF_1641456671",
+                "ie_RF_1641456747",
+                "ie_RF_1641456748",
+                "ie_RF_1641456749",
+                "ie_RF_1641456751"
+            ],
+            "name": "RFFE_INTERFACE_RXBB"
+        },
+        "ig_RF_1641456881": {
+            "elem_list": [
+                "ie_RF_1641456894"
+            ],
+            "name": "RFFE_DCBUS"
+        },
+        "ig_RF_1641456936": {
+            "elem_list": [
+                "ie_RF_1641457197",
+                "ie_RF_1641457264",
+                "ie_ipanahoodtop_RFFE_1755006373",
+                "ie_ipanakibonbtop_RF_1652953142",
+                "ie_ipanakibonbtop_RF_1654755595",
+                "ie_ipanahoodtop_RFFE_1697807032",
+                "ie_ipanahoodtop_RFFE_1697806470"
+            ],
+            "name": "RFFE_DSP"
+        },
+        "ig_ipanahoodtop_RFFE_1697719166": {
+            "elem_list": [
+                "ie_ipanahoodtop_RFFE_1697719236",
+                "ie_ipanahoodtop_RFFE_1697719234",
+                "ie_ipanahoodtop_RFFE_1697719226",
+                "ie_ipanahoodtop_RFFE_1697719224",
+                "ie_ipanahoodtop_RFFE_1697719221",
+                "ie_ipanahoodtop_RFFE_1697719196",
+                "ie_ipanahoodtop_RFFE_1697719298"
+            ],
+            "name": "RFFE_DIG_HPPA_DFT"
+        },
+        "ig_ipanahoodtop_RFFE_1755025889": {
+            "elem_list": [
+                "ie_ipanahoodtop_RFFE_1755025976",
+                "ie_ipanahoodtop_RFFE_1755026174"
+            ],
+            "name": "RFFE_DIG_HPPA_TEST"
+        },
+        "ig_ipanakibonbtop_RF_1657543706": {
+            "elem_list": [
+                "ie_ipanakibonbtop_RF_1657543737"
+            ],
+            "name": "RFFE_AUXPLL"
+        },
+        "ig_ipanakibonbtop_RF_1659968143": {
+            "elem_list": [
+                "ie_ipanakibonbtop_RF_1659968161",
+                "ie_ipanakibonbtop_RF_1659968191",
+                "ie_ipanakibonbtop_RF_1659968195",
+                "ie_ipanakibonbtop_RF_1659968197",
+                "ie_ipanakibonbtop_RF_1659968198",
+                "ie_ipanakibonbtop_RF_1659968199",
+                "ie_ipanakibonbtop_RF_1659968200",
+                "ie_ipanakibonbtop_RF_1659968201"
+            ],
+            "name": "RFFE_AGC"
+        }
+    },
+    "Registers": {
+        "r_ipanahoodtop_RFFE__1697032332": {
+            "access": "rw",
+            "address": "0x000A",
+            "fields": [
+                "f_ipanakibonbtop_RF_202501697032332",
+                "f_ipanakibonbtop_RF_202611697032332",
+                "f_ipanakibonbtop_RF_202721697032332"
+            ],
+            "name": "RFFE_HPPA_DIG_5_REG"
+        },
+        "r_ipanahoodtop_RFFE__1697032352": {
+            "access": "rw",
+            "address": "0x000B",
+            "fields": [
+                "f_ipanakibonbtop_RF_202801697032352",
+                "f_ipanakibonbtop_RF_202911697032352",
+                "f_ipanakibonbtop_RF_203021697032352"
+            ],
+            "name": "RFFE_HPPA_DIG_6_REG"
+        },
+        "r_ipanahoodtop_RFFE__1697032364": {
+            "access": "rw",
+            "address": "0x000C",
+            "fields": [
+                "f_ipanakibonbtop_RF_203101697032364",
+                "f_ipanakibonbtop_RF_203211697032364",
+                "f_ipanakibonbtop_RF_203321697032364",
+                "f_ipanakibonbtop_RF_203431697032364"
+            ],
+            "name": "RFFE_HPPA_DIG_7_REG"
+        },
+        "r_ipanahoodtop_RFFE__1731688744": {
+            "access": "rw",
+            "address": "0x0003",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1731688744",
+                "f_ipanakibonbtop_RF_2037",
+                "f_ipanakibonbtop_RF_2036"
+            ],
+            "name": "RFFE_HPPA_MCU_REG"
+        },
+        "r_ipanahoodtop_RFFE__1755070599": {
+            "access": "r-",
+            "address": "0x0011",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755071742"
+            ],
+            "name": "RFFE_HPPA_DIG_0_STS"
+        },
+        "r_ipanahoodtop_RFFE__1755070643": {
+            "access": "r-",
+            "address": "0x012",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755070643",
+                "f_ipanahoodtop_RFFE__1755071846"
+            ],
+            "name": "RFFE_HPPA_DIG_1_STS"
+        },
+        "r_ipanahoodtop_RFFE__1755072546": {
+            "access": "rw",
+            "address": "0x0017",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755072546",
+                "f_ipanahoodtop_RFFE__1755072680"
+            ],
+            "name": "RFFE_HPPA_DIG_LODIV_MCU_REG"
+        },
+        "r_ipanahoodtop_RFFE__1755102487": {
+            "access": "rw",
+            "address": "0x013",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755102537"
+            ],
+            "name": "RFFE_HPPA_DIG_FCWREC_0_MCU_REG"
+        },
+        "r_ipanahoodtop_RFFE__1755102952": {
+            "access": "rw",
+            "address": "0x014",
+            "fields": [
+                "f_ipanahoodtop_RFFE__175510253701755102952"
+            ],
+            "name": "RFFE_HPPA_DIG_FCWREC_1_MCU_REG"
+        },
+        "r_ipanahoodtop_RFFE__1755102984": {
+            "access": "rw",
+            "address": "0x015",
+            "fields": [
+                "f_ipanahoodtop_RFFE__17551025370175510295201755102984"
+            ],
+            "name": "RFFE_HPPA_DIG_FCWREC_2_MCU_REG"
+        },
+        "r_ipanahoodtop_RFFE__1755103015": {
+            "access": "rw",
+            "address": "0x016",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755102537017551029520175510298401755103015"
+            ],
+            "name": "RFFE_HPPA_DIG_FCWREC_3_MCU_REG"
+        },
+        "r_ipanakibonbtop_RF_200": {
+            "access": "rw",
+            "address": "0x0000",
+            "fields": [
+                "f_ipanakibonbtop_RF_2000",
+                "f_ipanakibonbtop_RF_2001",
+                "f_ipanakibonbtop_RF_2002",
+                "f_ipanakibonbtop_RF_2003",
+                "f_ipanakibonbtop_RF_2004",
+                "f_ipanakibonbtop_RF_2005",
+                "f_ipanakibonbtop_RF_2006"
+            ],
+            "name": "RFFE_INTERFACE_MCU_REG"
+        },
+        "r_ipanakibonbtop_RF_201": {
+            "access": "rw",
+            "address": "0x0001",
+            "fields": [
+                "f_ipanakibonbtop_RF_2007",
+                "f_ipanakibonbtop_RF_2008"
+            ],
+            "name": "RFFE_INTERFACE_1_MCU_REG"
+        },
+        "r_ipanakibonbtop_RF_202": {
+            "access": "rw",
+            "address": "0x0002",
+            "fields": [
+                "f_ipanakibonbtop_RF_2009",
+                "f_ipanakibonbtop_RF_2010"
+            ],
+            "name": "RFFE_INTERFACE_2_MCU_REG"
+        },
+        "r_ipanakibonbtop_RF_204": {
+            "access": "rw",
+            "address": "0x0005",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755022831",
+                "f_ipanakibonbtop_RF_2020",
+                "f_ipanakibonbtop_RF__1686831164",
+                "f_ipanakibonbtop_RF__1686831141",
+                "f_ipanakibonbtop_RF__1686831069",
+                "f_ipanakibonbtop_RF_2013",
+                "f_ipanakibonbtop_RF_2014",
+                "f_ipanakibonbtop_RF_2015"
+            ],
+            "name": "RFFE_HPPA_DIG_MCU_REG"
+        },
+        "r_ipanakibonbtop_RF_205": {
+            "access": "rw",
+            "address": "0x0006",
+            "fields": [
+                "f_ipanakibonbtop_RF_2016",
+                "f_ipanahoodtop_RFFE__1755024165",
+                "f_ipanahoodtop_RFFE__1755024125",
+                "f_ipanakibonbtop_RF__1686830479",
+                "f_ipanakibonbtop_RF_2019"
+            ],
+            "name": "RFFE_HPPA_DIG_1_REG"
+        },
+        "r_ipanakibonbtop_RF_207": {
+            "access": "rw",
+            "address": "0x0007",
+            "fields": [
+                "f_ipanakibonbtop_RF_2025",
+                "f_ipanakibonbtop_RF_2026",
+                "f_ipanakibonbtop_RF_2027"
+            ],
+            "name": "RFFE_HPPA_DIG_2_REG"
+        },
+        "r_ipanakibonbtop_RF_208": {
+            "access": "rw",
+            "address": "0x0008",
+            "fields": [
+                "f_ipanakibonbtop_RF_2028",
+                "f_ipanakibonbtop_RF_2029",
+                "f_ipanakibonbtop_RF_2030"
+            ],
+            "name": "RFFE_HPPA_DIG_3_REG"
+        },
+        "r_ipanakibonbtop_RF_209": {
+            "access": "rw",
+            "address": "0x0009",
+            "fields": [
+                "f_ipanakibonbtop_RF_2031",
+                "f_ipanakibonbtop_RF_2032",
+                "f_ipanakibonbtop_RF_2033",
+                "f_ipanakibonbtop_RF_2034"
+            ],
+            "name": "RFFE_HPPA_DIG_4_REG"
+        },
+        "r_ipanakibonbtop_RF_210": {
+            "access": "rw",
+            "address": "0x0004",
+            "fields": [
+                "f_ipanakibonbtop_RF_2035",
+                "f_ipanakibonbtop_RF_2038",
+                "f_ipanakibonbtop_RF_2039"
+            ],
+            "name": "RFFE_HPPA_REG"
+        },
+        "r_ipanakibonbtop_RF_211": {
+            "access": "rw",
+            "address": "0x0041",
+            "fields": [
+                "f_ipanakibonbtop_RF_2040",
+                "f_ipanakibonbtop_RF__1687159389",
+                "f_ipanakibonbtop_RF_2041",
+                "f_ipanakibonbtop_RF_2042",
+                "f_ipanakibonbtop_RF_2043"
+            ],
+            "name": "RFFE_LPPA_LNA_MCU_REG"
+        },
+        "r_ipanakibonbtop_RF_212": {
+            "access": "rw",
+            "address": "0x0043",
+            "fields": [
+                "f_ipanakibonbtop_RF_2045",
+                "f_ipanakibonbtop_RF_2046",
+                "f_ipanakibonbtop_RF_2047",
+                "f_ipanakibonbtop_RF_2044",
+                "f_ipanakibonbtop_RF_2048",
+                "f_ipanakibonbtop_RF_2049",
+                "f_ipanakibonbtop_RF_2050",
+                "f_ipanakibonbtop_RF_2051"
+            ],
+            "name": "RFFE_MISC_MCU_REG"
+        },
+        "r_ipanakibonbtop_RF_213": {
+            "access": "rw",
+            "address": "0x002C",
+            "fields": [
+                "f_ipanakibonbtop_RF_2052",
+                "f_ipanakibonbtop_RF_2053",
+                "f_ipanakibonbtop_RF_2054",
+                "f_ipanakibonbtop_RF_2056"
+            ],
+            "name": "RFFE_LPPA_1_REG"
+        },
+        "r_ipanakibonbtop_RF_214": {
+            "access": "rw",
+            "address": "0x002D",
+            "fields": [
+                "f_ipanakibonbtop_RF_2057"
+            ],
+            "name": "RFFE_LPPA_2_REG"
+        },
+        "r_ipanakibonbtop_RF_215": {
+            "access": "rw",
+            "address": "0x0024",
+            "fields": [
+                "f_ipanakibonbtop_RF_2058",
+                "f_ipanakibonbtop_RF_2059",
+                "f_ipanakibonbtop_RF_2060",
+                "f_ipanakibonbtop_RF_2061"
+            ],
+            "name": "RFFE_LNA_1_REG"
+        },
+        "r_ipanakibonbtop_RF_216": {
+            "access": "rw",
+            "address": "0x0025",
+            "fields": [
+                "f_ipanakibonbtop_RF_2062",
+                "f_ipanakibonbtop_RF_2063",
+                "f_ipanakibonbtop_RF_2064"
+            ],
+            "name": "RFFE_LNA_2_REG"
+        },
+        "r_ipanakibonbtop_RF_217": {
+            "access": "rw",
+            "address": "0x0026",
+            "fields": [
+                "f_ipanakibonbtop_RF_2065",
+                "f_ipanakibonbtop_RF_2066"
+            ],
+            "name": "RFFE_LNA_3_REG"
+        },
+        "r_ipanakibonbtop_RF_218": {
+            "access": "rw",
+            "address": "0x0027",
+            "fields": [
+                "f_ipanakibonbtop_RF_2067",
+                "f_ipanakibonbtop_RF_2068",
+                "f_ipanakibonbtop_RF_2069",
+                "f_ipanakibonbtop_RF_2070",
+                "f_ipanakibonbtop_RF_2071",
+                "f_ipanakibonbtop_RF_2072",
+                "f_ipanakibonbtop_RF_2073",
+                "f_ipanakibonbtop_RF_2074"
+            ],
+            "name": "RFFE_LNA_4_REG"
+        },
+        "r_ipanakibonbtop_RF_219": {
+            "access": "rw",
+            "address": "0x0028",
+            "fields": [
+                "f_ipanakibonbtop_RF_2075",
+                "f_ipanakibonbtop_RF_2076"
+            ],
+            "name": "RFFE_LNA_5_REG"
+        },
+        "r_ipanakibonbtop_RF_220": {
+            "access": "rw",
+            "address": "0x0029",
+            "fields": [
+                "f_ipanakibonbtop_RF_2077",
+                "f_ipanakibonbtop_RF_2078",
+                "f_ipanakibonbtop_RF_2079"
+            ],
+            "name": "RFFE_LNA_6_REG"
+        },
+        "r_ipanakibonbtop_RF_221": {
+            "access": "rw",
+            "address": "0x002A",
+            "fields": [
+                "f_ipanakibonbtop_RF_2080",
+                "f_ipanakibonbtop_RF_2081",
+                "f_ipanakibonbtop_RF_2082",
+                "f_ipanakibonbtop_RF_2083"
+            ],
+            "name": "RFFE_LNA_7_REG"
+        },
+        "r_ipanakibonbtop_RF_222": {
+            "access": "rw",
+            "address": "0x002B",
+            "fields": [
+                "f_ipanakibonbtop_RF_2084",
+                "f_ipanakibonbtop_RF_2085"
+            ],
+            "name": "RFFE_MIXER_REG"
+        },
+        "r_ipanakibonbtop_RF_223": {
+            "access": "rw",
+            "address": "0x0045",
+            "fields": [
+                "f_ipanakibonbtop_RF_2086",
+                "f_ipanakibonbtop_RF_2087"
+            ],
+            "name": "RFFE_PTAT_REG"
+        },
+        "r_ipanakibonbtop_RF_224": {
+            "access": "rw",
+            "address": "0x0046",
+            "fields": [
+                "f_ipanakibonbtop_RF_2088",
+                "f_ipanakibonbtop_RF_2089"
+            ],
+            "name": "RFFE_ANT_PKDET_REG"
+        },
+        "r_ipanakibonbtop_RF_225": {
+            "access": "rw",
+            "address": "0x0047",
+            "fields": [
+                "f_ipanakibonbtop_RF_2090",
+                "f_ipanakibonbtop_RF_2091",
+                "f_ipanakibonbtop_RF_2092"
+            ],
+            "name": "RFFE_CAL_REG"
+        },
+        "r_ipanakibonbtop_RF_226": {
+            "access": "rw",
+            "address": "0x0048",
+            "fields": [
+                "f_ipanakibonbtop_RF_2093",
+                "f_ipanakibonbtop_RF_2094"
+            ],
+            "name": "RFFE_DCBUS_REG"
+        },
+        "r_ipanakibonbtop_RF_227": {
+            "access": "rw",
+            "address": "0x0049",
+            "fields": [
+                "f_ipanakibonbtop_RF_2095"
+            ],
+            "name": "RFFE_SPARE_REG"
+        },
+        "r_ipanakibonbtop_RF_228": {
+            "access": "rw",
+            "address": "0x004A",
+            "fields": [
+                "f_ipanakibonbtop_RF_2096",
+                "f_ipanakibonbtop_RF_2097"
+            ],
+            "name": "RFFE_SPARE_1V5_REG"
+        },
+        "r_ipanakibonbtop_RF_229": {
+            "access": "r-",
+            "address": "0x004C",
+            "fields": [
+                "f_ipanakibonbtop_RF_2098",
+                "f_ipanakibonbtop_RF__1686834084",
+                "f_ipanakibonbtop_RF_2099"
+            ],
+            "name": "RFFE_STS"
+        },
+        "r_ipanakibonbtop_RF_230": {
+            "access": "r-",
+            "address": "0x004D",
+            "fields": [
+                "f_ipanakibonbtop_RF_2100",
+                "f_ipanakibonbtop_RF_2101",
+                "f_ipanakibonbtop_RF_2102"
+            ],
+            "name": "RFFE_CAL_1_STS"
+        },
+        "r_ipanakibonbtop_RF_231": {
+            "access": "r-",
+            "address": "0x004E",
+            "fields": [
+                "f_ipanakibonbtop_RF_2103",
+                "f_ipanakibonbtop_RF_2104"
+            ],
+            "name": "RFFE_CAL_2_STS"
+        },
+        "r_ipanakibonbtop_RF_232": {
+            "access": "r-",
+            "address": "0x004B",
+            "fields": [
+                "f_ipanakibonbtop_RF_2105",
+                "f_ipanakibonbtop_RF_2106"
+            ],
+            "name": "RFFE_SPARE_STS"
+        },
+        "r_ipanakibonbtop_RF__1686830192": {
+            "access": "rw",
+            "address": "0x000D",
+            "fields": [
+                "f_ipanakibonbtop_RF_203431686830192"
+            ],
+            "name": "RFFE_HPPA_DIG_8_MCU_REG"
+        },
+        "r_ipanakibonbtop_RF__1686830406": {
+            "access": "rw",
+            "address": "0x000E",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755024534",
+                "f_ipanahoodtop_RFFE__1755024635",
+                "f_ipanahoodtop_RFFE__1755024680",
+                "f_ipanahoodtop_RFFE__1755024708"
+            ],
+            "name": "RFFE_HPPA_DIG_9_REG"
+        },
+        "r_ipanakibonbtop_RF__1686830816": {
+            "access": "rw",
+            "address": "0x000F",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755022538",
+                "f_ipanahoodtop_RFFE__1755025743"
+            ],
+            "name": "RFFE_HPPA_DIG_10_REG"
+        },
+        "r_ipanakibonbtop_RF__1686831318": {
+            "access": "rw",
+            "address": "0x0010",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1755022668",
+                "f_ipanahoodtop_RFFE__1755025290",
+                "f_ipanahoodtop_RFFE__1755024377",
+                "f_ipanahoodtop_RFFE__1755024375",
+                "f_ipanakibonbtop_RF__168683101511686831318",
+                "f_ipanakibonbtop_RF__168683088021686831318"
+            ],
+            "name": "RFFE_HPPA_DIG_11_REG"
+        },
+        "r_ipanakibonbtop_RF__1687159080": {
+            "access": "rw",
+            "address": "0x002E",
+            "fields": [
+                "f_ipanahoodtop_RFFE__1697806959",
+                "f_ipanakibonbtop_RF__1687159494",
+                "f_ipanakibonbtop_RF__1687159468",
+                "f_ipanakibonbtop_RF__1687159292"
+            ],
+            "name": "RFFE_LPPA_3_REG"
+        }
+    },
+    "Sequences": {
+        "s_ipanakibonbtop_RF_1679048754": {
+            "description": "",
+            "name": "rffe_main_rccal",
+            "parent": "",
+            "sequence": [],
+            "validation_name": "rffe_main_rccal",
+            "verification_name": "rffe_main_rccal"
+        },
+        "s_ipanakibonbtop_RF_1679048796": {
+            "description": "",
+            "name": "rffe_rccal",
+            "parent": "s_ipanakibonbtop_RF_1679048754",
+            "sequence": [
+                {
+                    "op": "LOAD",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2091": "0x1",
+                        "f_ipanakibonbtop_RF_2092": "0x1"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2046": "0x0",
+                        "f_ipanakibonbtop_RF_2047": "0x1"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "3.5",
+                    "value": {}
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2046": "0x1",
+                        "f_ipanakibonbtop_RF_2047": "0x1"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "3.8",
+                    "value": {}
+                },
+                {
+                    "op": "POLL",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2102": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "rffe_rccal",
+            "verification_name": "rffe_rccal"
+        },
+        "s_ipanakibonbtop_RF_1679048796_0": {
+            "description": "",
+            "name": "rffe_rcal",
+            "parent": "s_ipanakibonbtop_RF_1679048754",
+            "sequence": [
+                {
+                    "op": "LOAD",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2091": "0x1",
+                        "f_ipanakibonbtop_RF_2092": "0x0"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2046": "0x0",
+                        "f_ipanakibonbtop_RF_2047": "0x1"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "3.5",
+                    "value": {}
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2046": "0x1",
+                        "f_ipanakibonbtop_RF_2047": "0x1"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "1.6",
+                    "value": {}
+                },
+                {
+                    "op": "POLL",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2102": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "rffe_rcal",
+            "verification_name": "rffe_rcal"
+        },
+        "s_ipanakibonbtop_RF_1679048796_1": {
+            "description": "",
+            "name": "rffe_ccal",
+            "parent": "s_ipanakibonbtop_RF_1679048754",
+            "sequence": [
+                {
+                    "op": "LOAD",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2091": "0x0",
+                        "f_ipanakibonbtop_RF_2092": "0x1"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2046": "0x0",
+                        "f_ipanakibonbtop_RF_2047": "0x1"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "3.5",
+                    "value": {}
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2046": "0x1",
+                        "f_ipanakibonbtop_RF_2047": "0x1"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "2.5",
+                    "value": {}
+                },
+                {
+                    "op": "POLL",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2102": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "rffe_ccal",
+            "verification_name": "rffe_ccal"
+        },
+        "s_ipanakibonbtop_RF_1679049958": {
+            "description": "",
+            "name": "rffe_main_tx",
+            "parent": "",
+            "sequence": [],
+            "validation_name": "rffe_main_tx",
+            "verification_name": "rffe_main_tx"
+        },
+        "s_ipanakibonbtop_RF_1679049981": {
+            "description": "",
+            "name": "lppa_tx",
+            "parent": "s_ipanakibonbtop_RF_1679049958",
+            "sequence": [
+                {
+                    "op": "LOAD",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2001": "0x1",
+                        "f_ipanakibonbtop_RF_2002": "0x3",
+                        "f_ipanakibonbtop_RF_2003": "0x0",
+                        "f_ipanakibonbtop_RF_2004": "0x0",
+                        "f_ipanakibonbtop_RF_2005": "0x0",
+                        "f_ipanakibonbtop_RF_2006": "0x1"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "option": "",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2044": "0x0",
+                        "f_ipanakibonbtop_RF_2045": "0x0",
+                        "f_ipanakibonbtop_RF_2048": "0x0",
+                        "f_ipanakibonbtop_RF_2049": "0x0",
+                        "f_ipanakibonbtop_RF_2050": "0x1",
+                        "f_ipanakibonbtop_RF_2051": "0x0"
+                    }
+                },
+                {
+                    "op": "LOAD",
+                    "option": "",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2041": "0x0",
+                        "f_ipanakibonbtop_RF_2042": "0x1",
+                        "f_ipanakibonbtop_RF_2043": "0x1",
+                        "f_ipanakibonbtop_RF__1687159389": "0x1"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "1",
+                    "value": {}
+                },
+                {
+                    "op": "WRITE",
+                    "option": "",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2044": "0x0",
+                        "f_ipanakibonbtop_RF_2045": "0x0",
+                        "f_ipanakibonbtop_RF_2048": "0x1",
+                        "f_ipanakibonbtop_RF_2049": "0x0",
+                        "f_ipanakibonbtop_RF_2050": "0x1",
+                        "f_ipanakibonbtop_RF_2051": "0x0"
+                    }
+                },
+                {
+                    "op": "LOAD",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2041": "0x0",
+                        "f_ipanakibonbtop_RF_2042": "0x1",
+                        "f_ipanakibonbtop_RF_2043": "0x1",
+                        "f_ipanakibonbtop_RF__1687159389": "0x0"
+                    }
+                }
+            ],
+            "validation_name": "lppa_tx",
+            "verification_name": "lppa_tx"
+        },
+        "s_ipanakibonbtop_RF_1679059182": {
+            "description": "",
+            "name": "hppa_tx",
+            "parent": "s_ipanakibonbtop_RF_1679049958",
+            "sequence": [
+                {
+                    "op": "LOAD",
+                    "option": "",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2038": "0x0",
+                        "f_ipanakibonbtop_RF_2039": "0x1"
+                    }
+                },
+                {
+                    "op": "LOAD",
+                    "option": "",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2008": "0x0"
+                    }
+                },
+                {
+                    "op": "LOAD",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2001": "0x0",
+                        "f_ipanakibonbtop_RF_2002": "0x0",
+                        "f_ipanakibonbtop_RF_2003": "0x1",
+                        "f_ipanakibonbtop_RF_2004": "0x1",
+                        "f_ipanakibonbtop_RF_2005": "0x0",
+                        "f_ipanakibonbtop_RF_2006": "0x1"
+                    }
+                },
+                {
+                    "op": "LOAD",
+                    "option": "",
+                    "value": {
+                        "f_ipanahoodtop_RFFE__1755024125": "0x0",
+                        "f_ipanahoodtop_RFFE__1755024165": "0x0",
+                        "f_ipanakibonbtop_RF_2019": "0x1",
+                        "f_ipanakibonbtop_RF__1686830479": "0x0"
+                    }
+                },
+                {
+                    "op": "LOAD",
+                    "option": "",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2013": "0x0",
+                        "f_ipanakibonbtop_RF_2014": "0x0",
+                        "f_ipanakibonbtop_RF_2015": "0x1",
+                        "f_ipanakibonbtop_RF_2020": "0x1",
+                        "f_ipanakibonbtop_RF__1686831069": "0x0",
+                        "f_ipanakibonbtop_RF__1686831141": "0x1",
+                        "f_ipanakibonbtop_RF__1686831164": "0x0"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "1",
+                    "value": {}
+                },
+                {
+                    "op": "LOAD",
+                    "option": "",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2013": "0x0",
+                        "f_ipanakibonbtop_RF_2014": "0x1",
+                        "f_ipanakibonbtop_RF_2015": "0x1",
+                        "f_ipanakibonbtop_RF_2020": "0x1",
+                        "f_ipanakibonbtop_RF__1686831069": "0x0",
+                        "f_ipanakibonbtop_RF__1686831141": "0x1",
+                        "f_ipanakibonbtop_RF__1686831164": "0x0"
+                    }
+                }
+            ],
+            "validation_name": "hppa_tx",
+            "verification_name": "hppa_tx"
+        },
+        "s_ipanakibonbtop_RF_1679059558": {
+            "description": "",
+            "name": "rffe_main_rx",
+            "parent": "",
+            "sequence": [],
+            "validation_name": "rffe_main_rx",
+            "verification_name": "rffe_main_rx"
+        },
+        "s_ipanakibonbtop_RF_1679059580": {
+            "description": "",
+            "name": "rffe_rxrf_en",
+            "parent": "s_ipanakibonbtop_RF_1679059558",
+            "sequence": [
+                {
+                    "op": "WRITE",
+                    "option": "",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2002": "0x2",
+                        "f_ipanakibonbtop_RF_2003": "0x0",
+                        "f_ipanakibonbtop_RF_2004": "0x0",
+                        "f_ipanakibonbtop_RF_2005": "0x1",
+                        "f_ipanakibonbtop_RF_2006": "0x1"
+                    }
+                },
+                {
+                    "op": "CUSTOM",
+                    "option": [
+                        "WRITE_REG",
+                        "RFFE_LNA_5_REG",
+                        "lna_high_gain_slice",
+                        "RFFE_LNA_HIGH_GAIN_SLICE_OVRD_MASK",
+                        "RFFE_LNA_HIGH_GAIN_SLICE_OVRD_POS"
+                    ]
+                },
+                {
+                    "op": "CUSTOM",
+                    "option": [
+                        "WRITE_REG",
+                        "RFFE_LNA_5_REG",
+                        "lna_high_gain_att",
+                        "RFFE_LNA_HIGH_GAIN_ATT_OVRD_MASK",
+                        "RFFE_LNA_HIGH_GAIN_ATT_OVRD_POS"
+                    ]
+                },
+                {
+                    "op": "CUSTOM",
+                    "option": [
+                        "WRITE_REG",
+                        "RFFE_LNA_6_REG",
+                        "lna_low_gain_slice",
+                        "RFFE_LNA_LOW_GAIN_SLICE_OVRD_MASK",
+                        "RFFE_LNA_LOW_GAIN_SLICE_OVRD_POS"
+                    ]
+                },
+                {
+                    "op": "CUSTOM",
+                    "option": [
+                        "WRITE_REG",
+                        "RFFE_LNA_6_REG",
+                        "lna_low_gain_att",
+                        "RFFE_LNA_LOW_GAIN_ATT_OVRD_MASK",
+                        "RFFE_LNA_LOW_GAIN_ATT_OVRD_POS"
+                    ]
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2050": "0x1"
+                    }
+                },
+                {
+                    "op": "WAIT",
+                    "option": "1",
+                    "value": {}
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2049": "0x1"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2081": "0x1",
+                        "f_ipanakibonbtop_RF_2083": "0x1"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2041": "0x1"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2051": "0x1"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2067": "0x1",
+                        "f_ipanakibonbtop_RF_2068": "0x1",
+                        "f_ipanakibonbtop_RF_2069": "0x1",
+                        "f_ipanakibonbtop_RF_2070": "0x1",
+                        "f_ipanakibonbtop_RF_2072": "0x1",
+                        "f_ipanakibonbtop_RF_2073": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "rffe_rxrf_en",
+            "variables": {
+                "var1": "input [5:0] lna_high_gain_slice;\ninput [1:0] lna_high_gain_att;\ninput [1:0] lna_low_gain_slice;\ninput [1:0] lna_low_gain_att;",
+                "var2": "$display(\"Enable RF path: lna_high_gain_slice, lna_high_gain_att, lna_low_gain_slice, lna_low_gain_att\");",
+                "var4": "$display(\"Enable RF path completed\");"
+            },
+            "verification_name": "rffe_rxrf_en"
+        },
+        "s_ipanakibonbtop_RF_1679061029": {
+            "description": "",
+            "name": "rffe_lna_low_noise_mode",
+            "parent": "s_ipanakibonbtop_RF_1679059558",
+            "sequence": [
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2064": "0x3"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2059": "0x0"
+                    }
+                }
+            ],
+            "validation_name": "rffe_lna_low_noise_mode",
+            "verification_name": "rffe_lna_low_noise_mode"
+        },
+        "s_ipanakibonbtop_RF_1679061029_0": {
+            "description": "",
+            "name": "rffe_lna_low_power_mode",
+            "parent": "s_ipanakibonbtop_RF_1679059558",
+            "sequence": [
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2064": "0x1"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2059": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "rffe_lna_low_power_mode",
+            "verification_name": "rffe_lna_low_power_mode"
+        },
+        "s_ipanakibonbtop_RF_1679061029_0_0": {
+            "description": "",
+            "name": "rffe_lna_ultra_low_power_mode",
+            "parent": "s_ipanakibonbtop_RF_1679059558",
+            "sequence": [
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2064": "0x0"
+                    }
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2059": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "rffe_lna_ultra_low_power_mode",
+            "verification_name": "rffe_lna_ultra_low_power_mode"
+        },
+        "s_ipanakibonbtop_RF_1679061300": {
+            "description": "",
+            "name": "rffe_lna_pkdet",
+            "parent": "s_ipanakibonbtop_RF_1679059558",
+            "sequence": [
+                {
+                    "op": "CUSTOM",
+                    "option": [
+                        "WRITE_REG",
+                        "RFFE_LNA_6_REG",
+                        "lna_pkdet_slice",
+                        "RFFE_LNA_PKDET_SLICE_OVRD_MASK",
+                        "RFFE_LNA_PKDET_SLICE_OVRD_POS"
+                    ]
+                },
+                {
+                    "op": "CUSTOM",
+                    "option": [
+                        "WRITE_REG",
+                        "RFFE_LNA_2_REG",
+                        "lna_pkdet_th",
+                        "RFFE_LNA_PKDET_TH_MASK",
+                        "RFFE_LNA_PKDET_TH_POS"
+                    ]
+                },
+                {
+                    "op": "WRITE",
+                    "value": {
+                        "f_ipanakibonbtop_RF_2071": "0x1"
+                    }
+                }
+            ],
+            "validation_name": "rffe_lna_pkdet",
+            "variables": {
+                "var1": "input [3:0] lna_pkdet_slice;\ninput [2:0] lna_pkdet_th;",
+                "var2": "$display(\"Enable LNA RF PKDET: lna_pkdet_slice, lna_pkdet_th\");",
+                "var4": "$display(\"Enable LNA RF PKDET completed\");"
+            },
+            "verification_name": "rffe_lna_pkdet"
+        }
+    },
+    "Templates": {
+        "8051_C_TEMPLATE": {
+            "CUSTOM": "    $c_var1($c_var2, ($c_var3 << $c_var5),$c_var4);",
+            "LOAD": "    LOAD_REG($reg_name, 0x$value_h8, 0x$mask_h); // $field_details",
+            "POLL": "    COMPARE_REG($reg_name, 0x$value_h8, 0x$mask_h8);",
+            "READ": "",
+            "RUN": "    $seq_verif_name;",
+            "WAIT": "    WAIT($value);",
+            "WRITE": "    UPDATE_REG($reg_name, 0x$value_h8, 0x$mask_h); // $field_details",
+            "custom_command": "    $c_var1($c_var2, ($c_var3 << $c_var5),$c_var4);",
+            "field_granularity": false,
+            "header_seq": "//----------------------------------------\n//  function $seq_verif_name\n//----------------------------------------\n$var1\nvoid $seq_verif_name()\n{",
+            "load_command": "    LOAD_REG($reg_name, 0x$value_h8, 0x$mask_h); // $field_details",
+            "poll_command": "    COMPARE_REG($reg_name, 0x$value_h8, 0x$mask_h8);",
+            "read_command": "",
+            "run_command": "    $seq_verif_name;",
+            "seq_def": "",
+            "tail_seq": "}\n\n",
+            "wait_command": "    WAIT($value);",
+            "write_command": "    UPDATE_REG($reg_name, 0x$value_h8, 0x$mask_h); // $field_details"
+        },
+        "DPLL_TEMPLATE": {
+            "CUSTOM": "    `WRITE_REG(`$c_var1, $c_var2, `$c_var3);",
+            "POLL": "    `READ_CMP_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h8);",
+            "RUN": "    task_top.$seq_verif_name;",
+            "WAIT": "    `WAIT($value);",
+            "WRITE": "    `WRITE_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details",
+            "custom_command": "    `WRITE_REG(`$c_var1, $c_var2, `$c_var3);",
+            "field_granularity": false,
+            "header_seq": "//----------------------------------------\n// Register Configuration: $seq_description\n//----------------------------------------\ntask $seq_verif_name;\n$var1\nbegin \n    $var2",
+            "poll_command": "    `READ_CMP_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h8);",
+            "run_command": "    task_top.$seq_verif_name;",
+            "seq_def": "",
+            "tail_seq": "    $var4\n    $var5\nend\nendtask\n\n",
+            "wait_command": "    `WAIT($value);",
+            "write_command": "    `WRITE_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details"
+        },
+        "HELIOS_TEMPLATE": {
+            "POLL": "        `POLL_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "RUN": "        `uvm_do($seq_verif_name)",
+            "WAIT": "        `WAIT($value)",
+            "WRITE": "        `WRITE_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "field_granularity": false,
+            "header_seq": "//----------------------------------------\n// Register Configuration: $seq_description\n//----------------------------------------\nclass $seq_verif_name;\n\n    virtual task body();\n",
+            "poll_command": "        `POLL_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "run_command": "        `uvm_do($seq_verif_name)",
+            "seq_def": "",
+            "tail_seq": "    endtask\nendclass\n",
+            "wait_command": "        `WAIT($value)",
+            "write_command": "        `WRITE_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)"
+        },
+        "NRF_TEMPLATE": {
+            "CUSTOM": "    `$c_var1(`$c_var2, ($c_var3 << `$c_var5),`$c_var4);",
+            "LOAD": "    `LOAD_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details",
+            "POLL": "    `READ_CMP_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h8);",
+            "READ": "",
+            "RUN": "    task_top.$seq_verif_name;",
+            "WAIT": "    `WAIT($value);",
+            "WRITE": "    `WRITE_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details",
+            "custom_command": "    `$c_var1(`$c_var2, ($c_var3 << `$c_var5),`$c_var4);",
+            "field_granularity": false,
+            "header_seq": "//----------------------------------------\n// Register Configuration: $seq_description\n//----------------------------------------\ntask $seq_verif_name;\n$var1\nbegin \n    $var2",
+            "load_command": "    `LOAD_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details",
+            "poll_command": "    `READ_CMP_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h8);",
+            "read_command": "",
+            "run_command": "    task_top.$seq_verif_name;",
+            "seq_def": "",
+            "tail_seq": "    $var4\n    $var5\nend\nendtask\n\n",
+            "wait_command": "    `WAIT($value);",
+            "write_command": "    `WRITE_REG(`$reg_name, 32'h$value_h8, 32'h$mask_h); // $field_details"
+        },
+        "NRF_TEMPLATE_FIELD_GRANULARITY": {
+            "POLL": "        `POLL_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "RUN": "        `uvm_do($seq_verif_name)",
+            "WAIT": "        `WAIT($value)",
+            "WRITE": "        `WRITE_REG($reg_name, $field_name, $value)",
+            "field_granularity": true,
+            "header_seq": "//----------------------------------------\n// Register Configuration: $seq_description\n//----------------------------------------\nclass Granularity_$seq_verif_name;\n\n    virtual task body();\n",
+            "poll_command": "        `POLL_REG($reg_name, 32'h$value_h8, 32'h$mask_h8)",
+            "run_command": "        `uvm_do($seq_verif_name)",
+            "seq_def": "",
+            "tail_seq": "    endtask\nendclass\n",
+            "wait_command": "        `WAIT($value)",
+            "write_command": "        `WRITE_REG($reg_name, $field_name, $value)"
+        }
+    }
+}
