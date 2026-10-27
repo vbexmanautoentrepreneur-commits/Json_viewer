@@ -1,0 +1,10 @@
+Level_shifter_list,Iso_Name
+ipanasharedlvlsh_a2d_1V5,lvlsh_a2d_ENB
+ipanasharedlvlsh_a2d_1V8,lvlsh_a2d_ENB
+ipanasharedlvlsh_a2d_hs,lvlsh_a2d_ENB
+ipanasharedlvlsh_a2d_ls,lvlsh_a2d_ENB
+ipanasharedlvlsh_d2a_1V5,none
+ipanasharedlvlsh_d2a_1V8,lvlsh_d2a_ENB
+ipanasharedlvlsh_d2a_hs,none
+ipanasharedlvlsh_d2a_ls,none
+ipanasharedlvlsh_d2a_iso1_ll_1V8,none
