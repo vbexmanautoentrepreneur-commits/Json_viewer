@@ -2,7 +2,7 @@ import sys,collections,json,csv,os
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QFileDialog, QPushButton,
                              QTextEdit, QLineEdit, QLabel, QTreeWidget, QTreeWidgetItem,
                              QVBoxLayout, QHBoxLayout, QSplitter, QMessageBox, QStatusBar,
-                             QStyle, QComboBox, QPlainTextEdit, QMenu,QTabWidget)
+                             QStyle, QComboBox, QPlainTextEdit, QTabWidget,QMenu, QCheckBox, QWidgetAction)
 from PyQt5.QtWidgets import (QAction)
 from PyQt5.QtGui import (QTextCursor, QTextCharFormat, QColor, QIcon, QPainter, QCursor, QFont)
 from PyQt5.QtCore import QSettings, QRect, QSize, Qt
@@ -79,17 +79,40 @@ class JsonEditor(QPlainTextEdit):
             block_number += 1
 
 
+def move_key(data, key, new_position):
+    """
+    move key in dico
+    data : dict d'origine
+    key : clé à déplacer
+    new_position : nouvelle position (0 = début)
+    """
+    if key not in data: return data  # nothing to do
+    items = list(data.items())
+    # elemnt remove
+    for i, (k, v) in enumerate(items):
+        if k == key:
+            elem = items.pop(i)
+            break
+    # position to secure
+    new_position = max(0, min(new_position, len(items)))
+    # insert in new position
+    items.insert(new_position, elem)
+    return dict(items)
+
+
 class JsonExplorer(QMainWindow):
 
     def __init__(self):
         super().__init__()
+        self.boo_cell_empty = None
+        self.csv_file_list_iso_signal_enum = None
         self.updating_tree = False
         self.boo_highlight_key=False
         self.current_file = ""
         self.setWindowTitle("JSON Explorer Pro")
         self.setWindowIcon(QIcon("icons/json.ico"))
-        self.resize_and_center()
-        self.resize(1400, 900)
+        self.resize_and_center(100)
+        # self.resize(1000, 800)
         self.setAcceptDrops(True)
         self.init_ui()
         self.create_menu()
@@ -110,13 +133,21 @@ class JsonExplorer(QMainWindow):
         toolbar = QHBoxLayout()
         self.settings = QSettings("JsonExplorer", "JsonExplorerPro")
         self.recent_files = self.settings.value("recent_files", [], type=list)
-        self.btn_open = QPushButton("📂 Open")
-        self.btn_save = QPushButton("💾 Save")
-        self.btn_save_as = QPushButton("💾 Save As")
-        self.btn_refresh = QPushButton("🔄 Refresh")
-        self.btn_validate = QPushButton("✅ Validate")
-        self.btn_expand = QPushButton("➕ Expand")
-        self.btn_collapse = QPushButton("➖ Collapse")
+        self.btn_open = QPushButton("Open")
+        self.btn_open.setIcon(self.style().standardIcon(QStyle.SP_DialogOpenButton))
+        self.btn_save = QPushButton("Save")
+        self.btn_save.setIcon(self.style().standardIcon(QStyle.SP_DialogSaveButton))
+        self.btn_save_as = QPushButton("Save As")
+        self.btn_save_as.setIcon(self.style().standardIcon(QStyle.SP_DialogSaveButton))
+        self.btn_refresh = QPushButton("Refresh")
+        self.btn_refresh.setIcon(self.style().standardIcon(QStyle.SP_BrowserReload))
+        self.btn_validate = QPushButton("Validate")
+        self.btn_validate.setIcon(self.style().standardIcon(QStyle.SP_DialogApplyButton))
+        self.btn_expand = QPushButton("Expand")
+        self.btn_expand.setIcon(self.style().standardIcon(QStyle.SP_ArrowDown))
+        self.btn_collapse = QPushButton("Collapse")
+        self.btn_collapse.setIcon(self.style().standardIcon(QStyle.SP_ArrowUp))
+
         self.btn_quit = QPushButton("Quit")
         self.btn_quit.setIcon(self.style().standardIcon(QStyle.SP_DialogCloseButton))
         self.btn_quit.setStyleSheet("""
@@ -181,28 +212,87 @@ class JsonExplorer(QMainWindow):
         explorer_layout = QVBoxLayout(self.explorer_tab)
         explorer_layout.addWidget(splitter)
         explorer_layout.addWidget(self.lbl_stats)
-        self.tabs.addTab(self.explorer_tab, "📂 Explorer")
+        self.tabs.addTab(self.explorer_tab, QIcon("icons/open.png"),"Explorer")
         main_layout.addWidget(self.tabs)
         #--------------------------------------------------------------------------
         self.correction_tab = QWidget()
         correction_layout = QVBoxLayout(self.correction_tab)
         correction_tab_layout= QHBoxLayout()
-        self.btn_validate_keys = QPushButton("🔍 Check Duplicate Keys")
-        self.btn_general_repair = QPushButton("🛠 General Repair")
+        self.btn_validate_keys = QPushButton("Check Duplicate Keys")
+        icon = QIcon.fromTheme("view-refresh")
+        if icon.isNull(): icon = self.style().standardIcon(QStyle.SP_BrowserReload)
+        self.btn_validate_keys.setIcon(icon)
+
+        self.btn_general_repair = QPushButton("General Repair")
+        icon = QIcon.fromTheme("tools-check-spelling")
+        if icon.isNull(): icon = self.style().standardIcon(QStyle.SP_DialogApplyButton)
+        self.btn_general_repair.setIcon(icon)
+
         self.btn_load_csv = QPushButton("📄 Load CSV LS and ISO")
+
+        self.repair_actions = {}
+        repairs = ["Load CSV described Level Shifter list  and ISO Signal",
+                   "[General][field_options] enum and none iso na repaired",
+                   "[General][field_options] [Dual Mode Lsh] added or repaired",
+                   "[Fields][field_options] format [Dual Mode Lsh] key and choose right LS with rw key",
+                   "[Fields] cell ,Iso Signal , Dual Mode Lsh and group repaired",
+                   "[Fields]  ISO signal corresponding to Level shifter described in cell key repaired",
+                   '[General][field_options][RW Mode] repaired ["True", "enum", ["r-", "rw", "-w"], "True"]',
+                   "[General][ie_options][Cell][2] = list Level shifter from CSV repaired",
+                   "[General][ie_options][Cell] = ['True', 'enum', list ISO name from CSV, 'True', 'none']  repaired",
+                   "[General][ie_options] enum and none iso na repaired",
+                   "[Interface_elements][field_options] format [Dual Mode Lsh] key and choose right LS with direction key",
+                   "[Interface_elements] cell ,Iso Signal , Dual Mode Lsh and group repaired",
+                   "[Interface_elements] attached ISO signal vs level shifter indicated in cell repaired",
+                   "[General] [ie_options] added ['Input', 'Output'] repaired",
+                   "[General] [date] now and [Version] +1 updated",
+                   "Sort some keys Cell Iso Signal Dual Mode Lsh and group in [Fields]",
+                   "Sort some keys Cell Iso Signal Dual Mode Lsh  in [Interface_elements]",
+                   "Sort some keys  Iso Signal Dual Mode Lsh  in [General][field_options]",
+                   "Update [General][Date] and [General][version]+1",
+                   "Update [General][_comment_repairs_XXXXXXXX] some information to indicate which script corrects Json"
+                   ]
+        menu = QMenu(self)
+        for name in repairs:
+            cb = QCheckBox(name)
+            cb.setChecked(True)
+            action = QWidgetAction(menu)
+            action.setDefaultWidget(cb)
+            menu.addAction(action)
+            self.repair_actions[name] = cb
+        menu.addSeparator()
+        select_all_cb = QCheckBox("Select All")
+        select_all_cb.setIcon(self.style().standardIcon(QStyle.SP_DialogApplyButton))
+        def select_all(state):
+            checked = state != 0
+            for cb in self.repair_actions.values():
+                cb.setChecked(checked)
+        select_all_cb.stateChanged.connect(select_all)
+        action = QWidgetAction(menu)
+        action.setDefaultWidget(select_all_cb)
+        menu.addAction(action)
+        menu.addSeparator()
+        validate_btn = QPushButton("Valider")
+        validate_btn.setIcon(self.style().standardIcon(QStyle.SP_DialogApplyButton))
+        action = QWidgetAction(menu)
+        action.setDefaultWidget(validate_btn)
+        menu.addAction(action)
+        validate_btn.clicked.connect(self.repair_keys_in_general_part)
+        self.btn_general_repair.setMenu(menu)
 
         self.btn_format = QPushButton("✨ Format JSON")
         self.btn_sort = QPushButton("📑 Sort Keys")
         correction_tab_layout.addWidget(self.btn_validate_keys)
         correction_tab_layout.addWidget(self.btn_general_repair)
-        correction_tab_layout.addWidget(self.btn_load_csv)
+        # correction_tab_layout.addWidget(self.btn_load_csv)
+        # correction_tab_layout.addWidget(menu)
         # correction_tab_layout.addWidget(self.btn_format)
         # correction_tab_layout.addWidget(self.btn_sort)
         correction_layout.addLayout(correction_tab_layout)
         self.correction_log = QTextEdit()
         self.correction_log.setReadOnly(True)
         correction_layout.addWidget(self.correction_log)
-        self.tabs.addTab(self.correction_tab, "🛠 Correction Json RMI")
+        self.tabs.addTab(self.correction_tab,QIcon("icons/json_repair.png"), "Correction Json RMI")
         # --------------------------------------------------------------------------
         self.report_tab = QWidget()
 
@@ -212,7 +302,7 @@ class JsonExplorer(QMainWindow):
         self.health_report.setReadOnly(True)
         report_layout.addWidget(self.btn_health)
         report_layout.addWidget(self.health_report)
-        self.tabs.addTab(self.report_tab, "📊 Reporting")
+        self.tabs.addTab(self.report_tab, QIcon("icons/reporting.png"),"Reporting")
         self.btn_health.clicked.connect(self.json_health_check)
         # --------------------------------------------------------------------------
         # explorer_layout.addWidget(self.logs)
@@ -238,7 +328,7 @@ class JsonExplorer(QMainWindow):
         self.search_edit.textChanged.connect(self.filter_tree)
         self.combo_root.currentTextChanged.connect(self.select_root_key)
         self.btn_validate_keys.clicked.connect(self.check_duplicate_keys)
-        self.btn_general_repair.clicked.connect(self.repair_keys_in_general_part)
+        # self.btn_general_repair.clicked.connect(self.repair_keys_in_general_part)
         self.btn_load_csv.clicked.connect(self.load_csv_file)
         self.btn_quit.clicked.connect(self.close)
         self.tree.itemChanged.connect(self.on_tree_changed)
@@ -252,26 +342,29 @@ class JsonExplorer(QMainWindow):
                                         QComboBox QAbstractItemView{ background:#2D2D2D; color:white;
                                          selection-background-color:#1976D2; }""")
 
+        self.tabs.setTabEnabled(1, False)  # Désactive l'onglet n°1
+        self.tabs.setTabEnabled(2, False)  # Désactive l'onglet n°2
+
     def resize_and_center(self, margin=50):
         screen = QApplication.screenAt(QCursor.pos())
         if screen is None:
             screen = QApplication.primaryScreen()
         geo = screen.availableGeometry()
-        width = int(geo.width()/2) - 2 * margin
-        height = int(geo.height()/2) - 2 * margin
+        width = int(geo.width()/2) - 3 * margin
+        height = int(geo.height()/2) - 1 * margin
         self.setGeometry( geo.x() + margin,  geo.y() + margin,  width, height  )
         screen_geometry = screen.availableGeometry()
         window_geometry = self.frameGeometry()
         x = screen_geometry.x() + (screen_geometry.width() - window_geometry.width()) // 2
         y = screen_geometry.y() + (screen_geometry.height() - window_geometry.height()) // 2
-        self.setMinimumHeight(height)
-        self.setMinimumWidth(width-2*margin)
+        self.setMinimumHeight(height-margin)
+        self.setMinimumWidth(width-4*margin)
         self.move(x, y)
 
     def create_menu(self):
 
         menubar = self.menuBar()
-        file_menu = menubar.addMenu("📂 File")
+        file_menu = menubar.addMenu(self.style().standardIcon(QStyle.SP_DirIcon), "File")
         open_action = QAction(self.style().standardIcon(QStyle.SP_DialogOpenButton),"Open", self)
         open_action.triggered.connect(self.load_json)
         open_action.setShortcut("Ctrl+L")
@@ -290,6 +383,17 @@ class JsonExplorer(QMainWindow):
         file_menu.addSeparator()
         self.recent_menu = file_menu.addMenu("Recent Files")
         self.update_recent_menu()
+
+    def validate_repairs(self):
+        selected_repairs = [name for name, cb in self.repair_actions.items() if cb.isChecked()]
+
+        print("Réparations sélectionnées :", selected_repairs)
+
+        # Fermer le menu
+        # self.btn_repair.menu().hide()
+
+        # # Lancer la réparation
+        # self.repair_json(selected_repairs)
 
     def add_recent_file(self, filepath):
 
@@ -455,189 +559,206 @@ class JsonExplorer(QMainWindow):
 
     def normalize_general(self,obj):
         self.boo_cell_empty=True
+
+        selected_repairs = [name for name, cb in self.repair_actions.items() if cb.isChecked()]
+        if "Load CSV described Level Shifter list  and ISO Signal" in selected_repairs:
+            self.load_csv_file()
+
         if isinstance(obj, dict):
-            if obj.get('General', None).get('field_options', None) is not None:
-                obj.get('General', None).get('field_options', None)["RW Mode"] = ["True", "enum", ["r-", "rw", "-w"], "True"]
-                self.correction_log.append("✅ [General][field_options][RW Mode] =[True, enum, [r-, rw, -w], True] repaired")
-                obj.get('General', None).get('field_options', None)["Dual Mode Lsh"] = ["False", "enum", ["no", "yes"], "True", "no"]
-                self.correction_log.append("✅ [General][field_options][Dual Mode Lsh] =[False, enum, [no, yes], True, no] repaired")
-                obj.get('General', None).get('field_options', None).get("Cell", None)[1] = "enum"
-                self.correction_log.append("✅ [General][field_options][Cell] [1] = 'enum' repaired")
-                obj.get('General', None).get('field_options', None).get("Cell", None)[2] = self.csv_file_list_level_shifter[1:]
-                self.correction_log.append("✅ [General][field_options][Cell][2] = list Level shifter from CSV repaired")
-                obj.get('General', None).get('field_options', None)["Iso Signal"]= ["True", "enum", self.csv_file_list_iso_signal_enum[1:], "True", "none"]
-                self.correction_log.append("✅ [General][field_options][Cell] = ['True', 'enum', list ISO name from CSV, 'True', 'none']  repaired")
+            if "[General][field_options] enum and none iso na repaired" in selected_repairs:
+                if obj.get('General', None).get('field_options', None) is not None:
+                    obj.get('General', None).get('field_options', None)["RW Mode"] = ["True", "enum", ["r-", "rw", "-w"], "True"]
+                    self.correction_log.append("✅ [General][field_options][RW Mode] =[True, enum, [r-, rw, -w], True] repaired")
+                    obj.get('General', None).get('field_options', None)["Dual Mode Lsh"] = ["False", "enum", ["no", "yes"], "True", "no"]
+                    self.correction_log.append("✅ [General][field_options][Dual Mode Lsh] =[False, enum, [no, yes], True, no] repaired")
+                    obj.get('General', None).get('field_options', None).get("Cell", None)[1] = "enum"
+                    self.correction_log.append("✅ [General][field_options][Cell] [1] = 'enum' repaired")
+                    obj.get('General', None).get('field_options', None).get("Cell", None)[2] = self.csv_file_list_level_shifter[1:]
+                    self.correction_log.append("✅ [General][field_options][Cell][2] = list Level shifter from CSV repaired")
+                    obj.get('General', None).get('field_options', None)["Iso Signal"]= ["True", "enum", self.csv_file_list_iso_signal_enum[1:], "True", "none"]
+                    self.correction_log.append("✅ [General][field_options][Cell] = ['True', 'enum', list ISO name from CSV, 'True', 'none']  repaired")
 
-            ie_options = obj.get("General", {}).get("field_options", {})
-            for key, value in ie_options.items():
-                if not isinstance(value, list) or len(value) < 3:
-                    continue
-                if value[1] != "enum":
-                    if isinstance(value[2], list) and value[2]:
-                        value[1] = "enum"
-                if value[1] == "enum":
-                    value[2] = [item for item in value[2] if str(item).lower() not in ("na", "none")]
-                    value[2].insert(0, "none")
-            self.correction_log.append("✅ [General][field_options] enum and none iso na repaired")
-
+                ie_options = obj.get("General", {}).get("field_options", {})
+                for key, value in ie_options.items():
+                    if not isinstance(value, list) or len(value) < 3: continue
+                    if value[1] != "enum":
+                        if isinstance(value[2], list) and value[2]: value[1] = "enum"
+                    if value[1] == "enum":
+                        value[2] = [item for item in value[2] if str(item).lower() not in ("na", "none")]
+                        value[2].insert(0, "none")
+                self.correction_log.append("✅ [General][field_options] enum and none iso na repaired")
+            # ---------------------------------------------------------------------------------------------
             # Added enum with Key Dual Mode Lsh if not exist
             # ---------------------------------------------------------------------------------------------
-            boo_dual_mode_field_found = False
-            key_dual_mode_name = ""
-            for element_gen_key in obj.get('General', None).get('field_options', None).keys():
-                if 'dual mode lsh' in str(element_gen_key).lower():
-                    key_dual_mode_name = element_gen_key
-                    boo_dual_mode_field_found = True
-            if not boo_dual_mode_field_found:
-                obj.get('General', None).get('field_options', None)["Dual Mode Lsh"] = ["False", "enum", ["no", "yes"], "True", "no"]
-            else:
-                obj.get('General', None).get('field_options', None)["Dual Mode Lsh"] = obj.get('General', None).get('field_options', None).pop(key_dual_mode_name)
+            if "[General][field_options] [Dual Mode Lsh] added or repaired" in selected_repairs:
+                boo_dual_mode_field_found = False
+                key_dual_mode_name = ""
+                for element_gen_key in obj.get('General', None).get('field_options', None).keys():
+                    if 'dual mode lsh' in str(element_gen_key).lower():
+                        key_dual_mode_name = element_gen_key
+                        boo_dual_mode_field_found = True
+                if not boo_dual_mode_field_found:
+                    obj.get('General', None).get('field_options', None)["Dual Mode Lsh"] = ["False", "enum", ["no", "yes"], "True", "no"]
+                else:
+                    obj.get('General', None).get('field_options', None)["Dual Mode Lsh"] = obj.get('General', None).get('field_options', None).pop(key_dual_mode_name)
+
+                self.correction_log.append("✅ [General][field_options] [Dual Mode Lsh] added or repaired")
             # ---------------------------------------------------------------------------------------------
             # Add Key cell or Correct value for field corresponding to previous enum
             # ---------------------------------------------------------------------------------------------
             if obj.get('Fields', None) is not None:
-                # ---------------------------------------------------------------------------------------------
-                # Update Key dual Mode LSH in case not correct write with Capitalize first letter of each words
-                # ---------------------------------------------------------------------------------------------
-                old = "Dual Mode LSH"
-                new = "Dual Mode Lsh"
-                for field_key, field in obj.get('Fields', None).items():
-                    if field_key.startswith("f_"):
-                        if old in field: field[new] = field.pop(old)
-                        if obj.get('Fields', None)[field_key].get('cell', None) is None and \
-                                obj.get('Fields', None)[field_key].get('Iso Signal', None) is None and \
-                                (obj.get('Fields', None)[field_key].get('group', None) == "" or \
-                                 obj.get('Fields', None)[field_key].get('group', None) is None) and \
-                                obj.get('Fields', None)[field_key].get('name', None) != "RESERVED":
-                            if obj.get('Fields', None)[field_key].get('rw', None) == "rw":
-                                if len([x for x in self.csv_file_list_level_shifter if "d2a_ls" in x]) == 1:
-                                    obj.get('Fields', None)[field_key]['cell'] = \
-                                    [x for x in self.csv_file_list_level_shifter if "d2a_ls" in x][0]
-                            elif obj.get('Fields', None)[field_key].get('rw', None) == "r-":
-                                if len([x for x in self.csv_file_list_level_shifter if "a2d_ls" in x]) == 1:
-                                    obj.get('Fields', None)[field_key]['cell'] = \
-                                    [x for x in self.csv_file_list_level_shifter if "a2d_ls" in x][0]
-
-            # ---------------------------------------------------------------------------------------------
-            # Added in fields some keys if not exist
-            # ---------------------------------------------------------------------------------------------
-            for element_field_key, element_field_val in obj.get('Fields', None).items():
-                for data_keys in element_field_val.keys():
-                    if str(element_field_val[data_keys]).lower() == 'na': element_field_val[data_keys] = 'none'
-                if element_field_val.get('cell', None) is None: element_field_val['cell'] = ''
-                if element_field_val.get('Iso Signal', None) is None: element_field_val['Iso Signal'] = 'none'
-                if element_field_val.get('Dual Mode Lsh', None) is None: element_field_val['Dual Mode Lsh'] = 'no'
-                if element_field_val.get('group', None) is None: element_field_val['group'] = ''
-            # ---------------------------------------------------------------------------------------------
-            # Kibo if cell="" used ls level shifter vs direction
-            # ---------------------------------------------------------------------------------------------
-                if (obj.get('Fields', None)[element_field_key].get('cell', None) == "") and \
-                        (obj.get('Fields', None)[element_field_key].get('group', None) == "") and \
-                        obj.get('Fields', None)[element_field_key].get('name', None) != "RESERVED" and self.boo_cell_empty:
-                    if obj.get('Fields', None)[element_field_key].get('rw', None) == "rw":
-                        if len([x for x in self.csv_file_list_level_shifter if "d2a_ls" in x]) == 1:
-                            obj.get('Fields', None)[element_field_key]['cell'] = [x for x in self.csv_file_list_level_shifter if "d2a_ls" in x][0]
-                    elif obj.get('Fields', None)[element_field_key].get('rw', None) == "r-":
-                        if len([x for x in self.csv_file_list_level_shifter if "a2d_ls" in x]) == 1:
-                            obj.get('Fields', None)[element_field_key]['cell'] = [x for x in self.csv_file_list_level_shifter if "a2d_ls" in x][0]
-                elif obj.get('Fields', None)[element_field_key].get('group', None) != "" and \
-                        len(obj.get('Fields', None)[element_field_key].get('cell', None)) < 6:
-                    obj.get('Fields', None)[element_field_key]['cell'] = "none"
-            self.correction_log.append("✅ [Fields] cell ,Iso Signal , Dual Mode Lsh and group repaired")
-            # ---------------------------------------------------------------------------------------------
-            # Attached ISO signal corresponding to Level shifter described in cell key
-            # ---------------------------------------------------------------------------------------------
-            for element_field_key, element_field_val in obj.get('Fields', None).items():
-                if obj.get('Fields', None)[element_field_key].get('cell', None) is not None:
-                    if obj.get('Fields', None)[element_field_key].get('rw', None) == "rw":
-                        if len([x for x in self.csv_file_list_level_shifter if
-                                obj.get('Fields', None)[element_field_key].get('cell', None) in x]) == 1:
-                            obj.get('Fields', None)[element_field_key]['Iso Signal'] = \
-                                self.csv_file_list_iso_signal[self.csv_file_list_level_shifter.index(
-                                    obj.get('Fields', None)[element_field_key].get('cell', None))]
-                    elif obj.get('Fields', None)[element_field_key].get('rw', None) == "r-":
-                        if len([x for x in self.csv_file_list_level_shifter if
-                                obj.get('Fields', None)[element_field_key].get('cell', None) in x]) == 1:
-                            obj.get('Fields', None)[element_field_key]['Iso Signal'] = \
-                                self.csv_file_list_iso_signal[self.csv_file_list_level_shifter.index(
-                                    obj.get('Fields', None)[element_field_key].get('cell', None))]
-            self.correction_log.append("✅ [Fields]  ISO signal corresponding to Level shifter described in cell key repaired")
-            # ---------------------------------------------------------------------------------------------
-            # Correct enum in general part - RW mode
-            # ---------------------------------------------------------------------------------------------
-            if obj.get('General', None).get('field_options', None).get("RW Mode", None) is not None:
-                obj.get('General', None).get('field_options', None)["RW Mode"] = ["True", "enum", ["r-", "rw", "-w"], "True"]
-                self.correction_log.append('✅ [General][field_options] ["RW Mode"] ["True", "enum", ["r-", "rw", "-w"], "True"] repaired')
-            # ---------------------------------------------------------------------------------------------
-            # Correct enum in general part - Interface
-            # ---------------------------------------------------------------------------------------------
-            if obj.get('General', None).get('ie_options', None).get("Cell", None)[1] != "enum" and self.csv_file_list_level_shifter is not None:
-                obj.get('General', None).get('ie_options', None).get("Cell", None)[1] = "enum"
-                obj.get('General', None).get('ie_options', None).get("Cell", None)[2] = self.csv_file_list_level_shifter[1:]
-                self.correction_log.append("✅ [General][ie_options][Cell][2] = list Level shifter from CSV repaired")
-            if obj.get('General', None).get('ie_options', None).get("Iso Signal", None) is None and self.csv_file_list_iso_signal_enum is not None:
-                obj.get('General', None).get('ie_options', None)["Iso Signal"] = ["True", "any", self.csv_file_list_iso_signal_enum[1:], "True", "na"]
-                self.correction_log.append("✅ [General][ie_options][Cell] = ['True', 'enum', list ISO name from CSV, 'True', 'none']  repaired")
-            # ---------------------------------------------------------------------------------------------
-            ie_options = obj.get("General", {}).get("ie_options", {})
-            for key, value in ie_options.items():
-                if not isinstance(value, list) or len(value) < 3:
-                    continue
-                if value[1] != "enum":
-                    if isinstance(value[2], list) and value[2]:
-                        value[1] = "enum"
-                if value[1] == "enum":
-                    value[2] = [item for item in value[2] if str(item).lower() not in ("na", "none")]
-                    value[2].insert(0, "none")
-            self.correction_log.append("✅ [General][ie_options] enum and none iso na  repaired")
-            # ---------------------------------------------------------------------------------------------
-            # Added enum with Key Dual Mode Lsh if not exist
-            # ---------------------------------------------------------------------------------------------
-            boo_dual_mode_ie_found = False
-            key_dual_mode_ie_name = ""
-            for element_gen_key in obj.get('General', None).get('ie_options', None).keys():
-                if 'dual mode lsh' in str(element_gen_key).lower():
-                    key_dual_mode_ie_name = element_gen_key
-                    boo_dual_mode_ie_found = True
-            if not boo_dual_mode_ie_found:
-                obj.get('General', None).get('ie_options', None)["Dual Mode Lsh"] = ["False", "enum", ["no", "yes"], "True", "no"]
-            else:
-                obj.get('General', None).get('ie_options', None)["Dual Mode Lsh"] = obj.get('General', None).get('ie_options', None).pop(key_dual_mode_ie_name)
-            self.correction_log.append("✅ [General][ie_options] Dual Mode Lsh  repaired")
-            # ---------------------------------------------------------------------------------------------
-            # Add Key cell or Correct value for field corresponding to previous enum
-            # ---------------------------------------------------------------------------------------------
-            if obj.get('Interface_elements', None) is not None:
+                if "[Fields][field_options] format [Dual Mode Lsh] key and choose right LS with rw key" in selected_repairs:
             # ---------------------------------------------------------------------------------------------
             # Update Key dual Mode LSH in case not correct write with Capitalize first letter of each words
             # ---------------------------------------------------------------------------------------------
-                old = "Dual Mode LSH"
-                new = "Dual Mode Lsh"
-                for interface_key, field in obj.get('Interface_elements', None).items():
-                    if interface_key.startswith("ie_"):
-                        if old in field: field[new] = field.pop(old)
-                        if obj.get('Interface_elements', None)[interface_key].get('cell', None) is None and \
-                                obj.get('Interface_elements', None)[interface_key].get('Iso Signal', None) is None and \
-                                (obj.get('Interface_elements', None)[interface_key].get('group', None) == "" or \
-                                 obj.get('Interface_elements', None)[interface_key].get('group', None) is None) and \
-                                obj.get('Interface_elements', None)[interface_key].get('name', None) != "RESERVED":
-                            if obj.get('Interface_elements', None)[interface_key].get('direction', None) == "Input":
-                                if len([x for x in self.csv_file_list_level_shifter if "d2a_ls" in x]) == 1: obj.get('Interface_elements', None)[interface_key]['cell'] =\
-                                    [x for x in self.csv_file_list_level_shifter if "d2a_ls" in x][0]
-                            elif obj.get('Interface_elements', None)[interface_key].get('direction', None) == "Output":
-                                if len([x for x in self.csv_file_list_level_shifter if "a2d_ls" in x]) == 1: obj.get('Interface_elements', None)[interface_key]['cell'] = \
-                                    [x for x in self.csv_file_list_level_shifter if "a2d_ls" in x][0]
+                    old = "Dual Mode LSH"
+                    new = "Dual Mode Lsh"
+                    for field_key, field in obj.get('Fields', None).items():
+                        if field_key.startswith("f_"):
+                            if old in field: field[new] = field.pop(old)
+                            if obj.get('Fields', None)[field_key].get('cell', None) is None and \
+                                    obj.get('Fields', None)[field_key].get('Iso Signal', None) is None and \
+                                    (obj.get('Fields', None)[field_key].get('group', None) == "" or \
+                                     obj.get('Fields', None)[field_key].get('group', None) is None) and \
+                                    obj.get('Fields', None)[field_key].get('name', None) != "RESERVED":
+                                if obj.get('Fields', None)[field_key].get('rw', None) == "rw":
+                                    if len([x for x in self.csv_file_list_level_shifter if "d2a_ls" in x]) == 1:
+                                        obj.get('Fields', None)[field_key]['cell'] = \
+                                        [x for x in self.csv_file_list_level_shifter if "d2a_ls" in x][0]
+                                elif obj.get('Fields', None)[field_key].get('rw', None) == "r-":
+                                    if len([x for x in self.csv_file_list_level_shifter if "a2d_ls" in x]) == 1:
+                                        obj.get('Fields', None)[field_key]['cell'] = \
+                                        [x for x in self.csv_file_list_level_shifter if "a2d_ls" in x][0]
+                    self.correction_log.append("✅ [Fields][field_options] format [Dual Mode Lsh] key and choose right LS with rw key")
             # ---------------------------------------------------------------------------------------------
-            # Added in Interface_elements some keys if not exist
+            # Added in fields some keys if not exist
             # ---------------------------------------------------------------------------------------------
-                for element_interface_key, element_field_val in obj.get('Interface_elements', None).items():
+            if "[Fields] cell ,Iso Signal , Dual Mode Lsh and group repaired" in selected_repairs:
+                for element_field_key, element_field_val in obj.get('Fields', None).items():
                     for data_keys in element_field_val.keys():
                         if str(element_field_val[data_keys]).lower() == 'na': element_field_val[data_keys] = 'none'
                     if element_field_val.get('cell', None) is None: element_field_val['cell'] = ''
                     if element_field_val.get('Iso Signal', None) is None: element_field_val['Iso Signal'] = 'none'
-                    if element_field_val.get('Dual Mode Lsh', None) is None: element_field_val[
-                        'Dual Mode Lsh'] = 'no'
+                    if element_field_val.get('Dual Mode Lsh', None) is None: element_field_val['Dual Mode Lsh'] = 'no'
                     if element_field_val.get('group', None) is None: element_field_val['group'] = ''
+            # ---------------------------------------------------------------------------------------------
+            # Kibo if cell="" used ls level shifter vs direction
+            # ---------------------------------------------------------------------------------------------
+                    if (obj.get('Fields', None)[element_field_key].get('cell', None) == "") and \
+                            (obj.get('Fields', None)[element_field_key].get('group', None) == "") and \
+                            obj.get('Fields', None)[element_field_key].get('name', None) != "RESERVED" and self.boo_cell_empty:
+                        if obj.get('Fields', None)[element_field_key].get('rw', None) == "rw":
+                            if len([x for x in self.csv_file_list_level_shifter if "d2a_ls" in x]) == 1:
+                                obj.get('Fields', None)[element_field_key]['cell'] = [x for x in self.csv_file_list_level_shifter if "d2a_ls" in x][0]
+                        elif obj.get('Fields', None)[element_field_key].get('rw', None) == "r-":
+                            if len([x for x in self.csv_file_list_level_shifter if "a2d_ls" in x]) == 1:
+                                obj.get('Fields', None)[element_field_key]['cell'] = [x for x in self.csv_file_list_level_shifter if "a2d_ls" in x][0]
+                    elif obj.get('Fields', None)[element_field_key].get('group', None) != "" and \
+                            len(obj.get('Fields', None)[element_field_key].get('cell', None)) < 6:
+                        obj.get('Fields', None)[element_field_key]['cell'] = "none"
+                self.correction_log.append("✅ [Fields] cell ,Iso Signal , Dual Mode Lsh and group repaired")
+            # ---------------------------------------------------------------------------------------------
+            # Attached ISO signal corresponding to Level shifter described in cell key
+            # ---------------------------------------------------------------------------------------------
+            if "[Fields]  ISO signal corresponding to Level shifter described in cell key repaired" in selected_repairs:
+                for element_field_key, element_field_val in obj.get('Fields', None).items():
+                    if obj.get('Fields', None)[element_field_key].get('cell', None) is not None:
+                        if obj.get('Fields', None)[element_field_key].get('rw', None) == "rw":
+                            if len([x for x in self.csv_file_list_level_shifter if
+                                    obj.get('Fields', None)[element_field_key].get('cell', None) in x]) == 1:
+                                obj.get('Fields', None)[element_field_key]['Iso Signal'] = \
+                                    self.csv_file_list_iso_signal[self.csv_file_list_level_shifter.index(
+                                        obj.get('Fields', None)[element_field_key].get('cell', None))]
+                        elif obj.get('Fields', None)[element_field_key].get('rw', None) == "r-":
+                            if len([x for x in self.csv_file_list_level_shifter if
+                                    obj.get('Fields', None)[element_field_key].get('cell', None) in x]) == 1:
+                                obj.get('Fields', None)[element_field_key]['Iso Signal'] = \
+                                    self.csv_file_list_iso_signal[self.csv_file_list_level_shifter.index(
+                                        obj.get('Fields', None)[element_field_key].get('cell', None))]
+                self.correction_log.append("✅ [Fields]  ISO signal corresponding to Level shifter described in cell key repaired")
+
+            # ---------------------------------------------------------------------------------------------
+            # Correct enum in general part - RW mode
+            # ---------------------------------------------------------------------------------------------
+            if '[General][field_options][RW Mode] repaired ["True", "enum", ["r-", "rw", "-w"], "True"]' in selected_repairs:
+                if obj.get('General', None).get('field_options', None).get("RW Mode", None) is not None:
+                    obj.get('General', None).get('field_options', None)["RW Mode"] = ["True", "enum", ["r-", "rw", "-w"], "True"]
+                    self.correction_log.append('✅ [General][field_options] ["RW Mode"] ["True", "enum", ["r-", "rw", "-w"], "True"] repaired')
+            # ---------------------------------------------------------------------------------------------
+            # Correct enum in general part - Interface
+            # ---------------------------------------------------------------------------------------------
+            if "[General][ie_options][Cell][2] = list Level shifter from CSV repaired" in selected_repairs:
+                if obj.get('General', None).get('ie_options', None).get("Cell", None)[1] != "enum" and self.csv_file_list_level_shifter is not None:
+                    obj.get('General', None).get('ie_options', None).get("Cell", None)[1] = "enum"
+                    obj.get('General', None).get('ie_options', None).get("Cell", None)[2] = self.csv_file_list_level_shifter[1:]
+                    self.correction_log.append("✅ [General][ie_options][Cell][2] = list Level shifter from CSV repaired")
+            if "[General][ie_options][Cell] = ['True', 'enum', list ISO name from CSV, 'True', 'none']  repaired" in selected_repairs:
+                if obj.get('General', None).get('ie_options', None).get("Iso Signal", None) is None and self.csv_file_list_iso_signal_enum is not None:
+                    obj.get('General', None).get('ie_options', None)["Iso Signal"] = ["True", "any", self.csv_file_list_iso_signal_enum[1:], "True", "na"]
+                    self.correction_log.append("✅ [General][ie_options][Cell] = ['True', 'enum', list ISO name from CSV, 'True', 'none']  repaired")
+            # ---------------------------------------------------------------------------------------------
+            if "[General][ie_options] enum and none iso na repaired" in selected_repairs:
+                ie_options = obj.get("General", {}).get("ie_options", {})
+                for key, value in ie_options.items():
+                    if not isinstance(value, list) or len(value) < 3: continue
+                    if value[1] != "enum":
+                        if isinstance(value[2], list) and value[2]: value[1] = "enum"
+                    if value[1] == "enum":
+                        value[2] = [item for item in value[2] if str(item).lower() not in ("na", "none")]
+                        value[2].insert(0, "none")
+                self.correction_log.append("✅ [General][ie_options] enum and none iso na repaired")
+            # ---------------------------------------------------------------------------------------------
+            # Added enum with Key Dual Mode Lsh if not exist
+            # ---------------------------------------------------------------------------------------------
+            if "[General][ie_options] Dual Mode Lsh  repaired" in selected_repairs:
+                boo_dual_mode_ie_found = False
+                key_dual_mode_ie_name = ""
+                for element_gen_key in obj.get('General', None).get('ie_options', None).keys():
+                    if 'dual mode lsh' in str(element_gen_key).lower():
+                        key_dual_mode_ie_name = element_gen_key
+                        boo_dual_mode_ie_found = True
+                if not boo_dual_mode_ie_found:
+                    obj.get('General', None).get('ie_options', None)["Dual Mode Lsh"] = ["False", "enum", ["no", "yes"], "True", "no"]
+                else:
+                    obj.get('General', None).get('ie_options', None)["Dual Mode Lsh"] = obj.get('General', None).get('ie_options', None).pop(key_dual_mode_ie_name)
+                self.correction_log.append("✅ [General][ie_options] Dual Mode Lsh  repaired")
+            # ---------------------------------------------------------------------------------------------
+            # Add Key cell or Correct value for field corresponding to previous enum
+            # ---------------------------------------------------------------------------------------------
+            if obj.get('Interface_elements', None) is not None:
+                if "[Interface_elements][field_options] format [Dual Mode Lsh] key and choose right LS with direction key" in selected_repairs:
+            # ---------------------------------------------------------------------------------------------
+            # Update Key dual Mode LSH in case not correct write with Capitalize first letter of each words
+            # ---------------------------------------------------------------------------------------------
+                    old = "Dual Mode LSH"
+                    new = "Dual Mode Lsh"
+                    for interface_key, field in obj.get('Interface_elements', None).items():
+                        if interface_key.startswith("ie_"):
+                            if old in field: field[new] = field.pop(old)
+                            if obj.get('Interface_elements', None)[interface_key].get('cell', None) is None and \
+                                    obj.get('Interface_elements', None)[interface_key].get('Iso Signal', None) is None and \
+                                    (obj.get('Interface_elements', None)[interface_key].get('group', None) == "" or \
+                                     obj.get('Interface_elements', None)[interface_key].get('group', None) is None) and \
+                                    obj.get('Interface_elements', None)[interface_key].get('name', None) != "RESERVED":
+                                if obj.get('Interface_elements', None)[interface_key].get('direction', None) == "Input":
+                                    if len([x for x in self.csv_file_list_level_shifter if "d2a_ls" in x]) == 1: obj.get('Interface_elements', None)[interface_key]['cell'] =\
+                                        [x for x in self.csv_file_list_level_shifter if "d2a_ls" in x][0]
+                                elif obj.get('Interface_elements', None)[interface_key].get('direction', None) == "Output":
+                                    if len([x for x in self.csv_file_list_level_shifter if "a2d_ls" in x]) == 1: obj.get('Interface_elements', None)[interface_key]['cell'] = \
+                                        [x for x in self.csv_file_list_level_shifter if "a2d_ls" in x][0]
+                    self.correction_log.append("✅ [Interface_elements][field_options] format [Dual Mode Lsh] key and choose right LS with direction key")
+            # ---------------------------------------------------------------------------------------------
+            # Added in Interface_elements some keys if not exist
+            # ---------------------------------------------------------------------------------------------
+                if "[Interface_elements] cell ,Iso Signal , Dual Mode Lsh and group repaired" in selected_repairs:
+                    for element_interface_key, element_field_val in obj.get('Interface_elements', None).items():
+                        for data_keys in element_field_val.keys():
+                            if str(element_field_val[data_keys]).lower() == 'na': element_field_val[data_keys] = 'none'
+                        if element_field_val.get('cell', None) is None: element_field_val['cell'] = ''
+                        if element_field_val.get('Iso Signal', None) is None: element_field_val['Iso Signal'] = 'none'
+                        if element_field_val.get('Dual Mode Lsh', None) is None: element_field_val[
+                            'Dual Mode Lsh'] = 'no'
+                        if element_field_val.get('group', None) is None: element_field_val['group'] = ''
             # # ---------------------------------------------------------------------------------------------
             # # Kibo if cell="" used ls level shifter vs direction
             # # ---------------------------------------------------------------------------------------------
@@ -648,113 +769,99 @@ class JsonExplorer(QMainWindow):
                             if len([x for x in self.csv_file_list_level_shifter if "a2d_ls" in x]) == 1: obj.get('Interface_elements', None)[element_interface_key]['cell'] = [x for x in self.csv_file_list_level_shifter if "a2d_ls" in x][0]
                     elif obj.get('Interface_elements', None)[element_interface_key].get('group', None) != "" and len(obj.get('Interface_elements', None)[element_interface_key].get('cell', None)) < 6:
                         obj.get('Interface_elements', None)[element_interface_key]['cell'] = "none"
-                self.correction_log.append("✅ [Interface_elements] cell ,Iso Signal , Dual Mode Lsh and group repaired")
+                    self.correction_log.append("✅ [Interface_elements] cell ,Iso Signal , Dual Mode Lsh and group repaired")
             # ---------------------------------------------------------------------------------------------
             # Attached ISO signal corresponding to Level shifter described in cell key
             # ---------------------------------------------------------------------------------------------
-                for element_interface_key, element_field_val in obj.get('Interface_elements', None).items():
-                    if obj.get('Interface_elements', None)[element_interface_key].get('cell', None) is not None:
-                        if obj.get('Interface_elements', None)[element_interface_key].get(
-                                'direction', None) == "Input":
-                            if len([x for x in self.csv_file_list_level_shifter if obj.get('Interface_elements', None)[element_interface_key].get('cell', None) in x]) == 1:
-                                obj.get('Interface_elements', None)[element_interface_key]['Iso Signal'] = \
-                                    self.csv_file_list_iso_signal[self.csv_file_list_level_shifter.index(obj.get('Interface_elements', None)[element_interface_key].get('cell', None))]
-                        elif obj.get('Interface_elements', None)[element_interface_key].get('direction', None) == "Output":
-                            if len([x for x in self.csv_file_list_level_shifter if obj.get('Interface_elements', None)[element_interface_key].get('cell', None) in x]) == 1:
-                                obj.get('Interface_elements', None)[element_interface_key]['Iso Signal'] = \
-                                    self.csv_file_list_iso_signal[self.csv_file_list_level_shifter.index(
-                                        obj.get('Interface_elements', None)[element_interface_key].get('cell', None))]
-                self.correction_log.append("✅ [Interface_elements] attached ISO signal vs level shifter indicated in cell repaired")
+                if "[Interface_elements] attached ISO signal vs level shifter indicated in cell repaired" in selected_repairs:
+                    for element_interface_key, element_field_val in obj.get('Interface_elements', None).items():
+                        if obj.get('Interface_elements', None)[element_interface_key].get('cell', None) is not None:
+                            if obj.get('Interface_elements', None)[element_interface_key].get(
+                                    'direction', None) == "Input":
+                                if len([x for x in self.csv_file_list_level_shifter if obj.get('Interface_elements', None)[element_interface_key].get('cell', None) in x]) == 1:
+                                    obj.get('Interface_elements', None)[element_interface_key]['Iso Signal'] = \
+                                        self.csv_file_list_iso_signal[self.csv_file_list_level_shifter.index(obj.get('Interface_elements', None)[element_interface_key].get('cell', None))]
+                            elif obj.get('Interface_elements', None)[element_interface_key].get('direction', None) == "Output":
+                                if len([x for x in self.csv_file_list_level_shifter if obj.get('Interface_elements', None)[element_interface_key].get('cell', None) in x]) == 1:
+                                    obj.get('Interface_elements', None)[element_interface_key]['Iso Signal'] = \
+                                        self.csv_file_list_iso_signal[self.csv_file_list_level_shifter.index(
+                                            obj.get('Interface_elements', None)[element_interface_key].get('cell', None))]
+                    self.correction_log.append("✅ [Interface_elements] attached ISO signal vs level shifter indicated in cell repaired")
             # ---------------------------------------------------------------------------------------------
             # Correct enum in general part - Interface
             # ---------------------------------------------------------------------------------------------
-            for element_in_general in obj.get('General', None).get('ie_options', None).keys():
-                if element_in_general == 'Direction':
-                    if obj.get('General', None).get('ie_options', None).get(element_in_general, None)[1] == "any":
-                        obj.get('General', None).get('ie_options', None).get(element_in_general, None)[2] = ['Input', 'Output']
-                        obj.get('General', None).get('ie_options', None).get(element_in_general, None)[1] = 'enum'
-                    elif obj.get('General', None).get('ie_options', None).get(element_in_general, None)[1] == "enum":
-                        obj.get('General', None).get('ie_options', None).get(element_in_general, None)[2] = ['Input', 'Output']
-            # ---------------------------------------------------------------------------------------------
-            # Correct interface element value for field corresponding to previous enum
-            # ---------------------------------------------------------------------------------------------
-                if obj.get('Interface_elements', None) is not None:
-                    for element_field in obj.get('Interface_elements', None).values():
-                        if element_field.get('direction', None) != "":
-                            element_field['direction'] = str(element_field['direction']).capitalize()
-            self.correction_log.append("✅ [General] [ie_options] added ['Input', 'Output'] repaired")
+            if "[General] [ie_options] added ['Input', 'Output'] repaired" in selected_repairs:
+                for element_in_general in obj.get('General', None).get('ie_options', None).keys():
+                    if element_in_general == 'Direction':
+                        if obj.get('General', None).get('ie_options', None).get(element_in_general, None)[1] == "any":
+                            obj.get('General', None).get('ie_options', None).get(element_in_general, None)[2] = ['Input', 'Output']
+                            obj.get('General', None).get('ie_options', None).get(element_in_general, None)[1] = 'enum'
+                        elif obj.get('General', None).get('ie_options', None).get(element_in_general, None)[1] == "enum":
+                            obj.get('General', None).get('ie_options', None).get(element_in_general, None)[2] = ['Input', 'Output']
+                # ---------------------------------------------------------------------------------------------
+                # Correct interface element value for field corresponding to previous enum
+                # ---------------------------------------------------------------------------------------------
+                    if obj.get('Interface_elements', None) is not None:
+                        for element_field in obj.get('Interface_elements', None).values():
+                            if element_field.get('direction', None) != "":
+                                element_field['direction'] = str(element_field['direction']).capitalize()
+                self.correction_log.append("✅ [General] [ie_options] added ['Input', 'Output'] repaired")
             # ---------------------------------------------------------------------------------------------
             # Update General date and version
             # ---------------------------------------------------------------------------------------------
-            if obj.get('General', None).get('date', None) is not None:
-                obj['General']['date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            if obj.get('General', None).get('version', None) is not None:
-                obj['General']['version'] += 1
-            self.correction_log.append("✅ [General] [date] now and [Version] +1 updated ")
+            if "[General] [date] now and [Version] +1 updated" in selected_repairs:
+                if obj.get('General', None).get('date', None) is not None:
+                    obj['General']['date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                if obj.get('General', None).get('version', None) is not None:
+                    obj['General']['version'] += 1
+                self.correction_log.append("✅ [General] [date] now and [Version] +1 updated")
             # ---------------------------------------------------------------------------------------------
             # Move Iso signal and Cell on top of each fields dico
             # ---------------------------------------------------------------------------------------------
             # list_key=['cell','Iso Signal','Dual Mode Lsh','group']
-            if obj.get('Fields', None) is not None:
-                for element_field_key, element_field_val in obj.get('Fields', None).items():
-                    obj.get('Fields', None)[element_field_key] = self.move_key(element_field_val, 'cell', 1)
-                for element_field_key, element_field_val in obj.get('Fields', None).items():
-                    obj.get('Fields', None)[element_field_key] = self.move_key(element_field_val, "Iso Signal", 2)
-                for element_field_key, element_field_val in obj.get('Fields', None).items():
-                    obj.get('Fields', None)[element_field_key] = self.move_key(element_field_val, "Dual Mode Lsh", 3)
-                for element_field_key, element_field_val in obj.get('Fields', None).items():
-                    obj.get('Fields', None)[element_field_key] = self.move_key(element_field_val, "group", 3)
-
-            if obj.get('Interface_elements', None) is not None:
-                for element_interface_key, element_field_val in obj.get(
-                        'Interface_elements', None).items():
-                    obj.get('Interface_elements', None)[element_interface_key] = self.move_key(element_field_val, "cell", 1)
-                for element_interface_key, element_field_val in obj.get(
-                        'Interface_elements', None).items():
-                    obj.get('Interface_elements', None)[element_interface_key] = self.move_key(element_field_val, "Iso Signal", 2)
-                for element_interface_key, element_field_val in obj.get(
-                        'Interface_elements', None).items():
-                    obj.get('Interface_elements', None)[element_interface_key] = self.move_key(element_field_val, "Dual Mode Lsh", 3)
-
-            if obj.get('General', None) is not None:
-                obj.get('General', None)['field_options'] = self.move_key(
-                    obj.get('General', None)['field_options'], "Iso Signal", 3)
-                obj.get('General', None)['field_options'] = self.move_key(
-                    obj.get('General', None)['field_options'], "Dual Mode Lsh", 4)
-
-            obj.get('General', None)['date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            obj.get('General', None)['version'] += 1
+            if "Sort some keys Cell Iso Signal Dual Mode Lsh and group in [Fields]" in selected_repairs:
+                if obj.get('Fields', None) is not None:
+                    for element_field_key, element_field_val in obj.get('Fields', None).items():
+                        obj.get('Fields', None)[element_field_key] = move_key(element_field_val, 'cell', 1)
+                    for element_field_key, element_field_val in obj.get('Fields', None).items():
+                        obj.get('Fields', None)[element_field_key] = move_key(element_field_val, "Iso Signal", 2)
+                    for element_field_key, element_field_val in obj.get('Fields', None).items():
+                        obj.get('Fields', None)[element_field_key] = move_key(element_field_val, "Dual Mode Lsh", 3)
+                    for element_field_key, element_field_val in obj.get('Fields', None).items():
+                        obj.get('Fields', None)[element_field_key] = move_key(element_field_val, "group", 3)
+                    self.correction_log.append("✅ Sort some keys Cell Iso Signal Dual Mode Lsh and group in [Fields]")
+            if "Sort some keys Cell Iso Signal Dual Mode Lsh  in [Interface_elements]" in selected_repairs:
+                if obj.get('Interface_elements', None) is not None:
+                    for element_interface_key, element_field_val in obj.get('Interface_elements', None).items():
+                        obj.get('Interface_elements', None)[element_interface_key] = move_key(element_field_val, "cell", 1)
+                    for element_interface_key, element_field_val in obj.get('Interface_elements', None).items():
+                        obj.get('Interface_elements', None)[element_interface_key] = move_key(element_field_val, "Iso Signal", 2)
+                    for element_interface_key, element_field_val in obj.get('Interface_elements', None).items():
+                        obj.get('Interface_elements', None)[element_interface_key] = move_key(element_field_val, "Dual Mode Lsh", 3)
+                    self.correction_log.append("✅ Sort some keys Cell Iso Signal Dual Mode Lsh  in [Interface_elements]")
+            if "Sort some keys  Iso Signal Dual Mode Lsh  in [General][field_options]" in selected_repairs:
+                if obj.get('General', None) is not None:
+                    obj.get('General', None)['field_options'] = move_key(obj.get('General', None)['field_options'], "Iso Signal", 3)
+                    obj.get('General', None)['field_options'] = move_key(obj.get('General', None)['field_options'], "Dual Mode Lsh", 4)
+                    self.correction_log.append("✅ Sort some keys  Iso Signal Dual Mode Lsh  in [General][field_options]")
+            if "Update [General][Date] and [General][version]+1" in selected_repairs:
+                obj.get('General', None)['date'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                obj.get('General', None)['version'] += 1
+                self.correction_log.append("✅ Update [General][Date] and [General][version]+1")
 
         #---------------------------------------------------------------------------------------------
         # Added _comment in  General to indicate json db updated with ver_r_repair_json_database.py script
         # delivered by Verification team
         #---------------------------------------------------------------------------------------------
-        obj['General']['_comment_repairs_'+datetime.now().strftime("%Y_%m_%d_%H_%M_%S")] ='Python script used: ' + str(os.path.basename(__file__)) +' , '+\
-                                                                        'Python script Version: ' + str(__version__) +' , '+\
-                                                                        'Pillar: ' + str(__part__)+' , '+\
-                                                                        'Maintainer: ' + str(__maintainer__) + ' , '+\
-                                                                        'Who: ' + os.getlogin()
-        return obj
+        if "Update [General][_comment_repairs_XXXXXXXX] some information to indicate which script corrects Json" in selected_repairs:
+            obj['General']['_comment_repairs_'+datetime.now().strftime("%Y_%m_%d_%H_%M_%S")] ='Python script used: ' + str(os.path.basename(__file__)) +' , '+\
+                                                                            'Python script Version: ' + str(__version__) +' , '+\
+                                                                            'Pillar: ' + str(__part__)+' , '+\
+                                                                            'Maintainer: ' + str(__maintainer__) + ' , '+\
+                                                                            'Who: ' + os.getlogin()
+            self.correction_log.append("✅ Update [General][_comment_repairs_XXXXXXXX] some information to indicate which script corrects Json")
 
-    def move_key(self,data, key, new_position):
-        """
-        move key in dico
-        data : dict d'origine
-        key : clé à déplacer
-        new_position : nouvelle position (0 = début)
-        """
-        if key not in data: return data  # nothing to do
-        items = list(data.items())
-        # elemnt remove
-        for i, (k, v) in enumerate(items):
-            if k == key:
-                elem = items.pop(i)
-                break
-        # position to secure
-        new_position = max(0, min(new_position, len(items)))
-        # insert in new position
-        items.insert(new_position, elem)
-        return dict(items)
+        return obj
 
     def load_csv_file(self):
         if self.tree.topLevelItemCount() != 0:
@@ -776,8 +883,8 @@ class JsonExplorer(QMainWindow):
                     self.csv_file_list_level_shifter =None
                     self.csv_file_list_iso_signal =None
                 self.correction_log.append("✅ Level Shifter Enum and ISO name loaded:")
-                self.correction_log.append('\n'.join(self.csv_file_list_level_shifter))
-                self.correction_log.append('\n'.join(self.csv_file_list_iso_signal))
+                self.correction_log.append('['+ ' , '.join(self.csv_file_list_level_shifter) + ']')
+                self.correction_log.append('['+ ' , '.join(self.csv_file_list_iso_signal)+ ']')
                 self.log("Load csv Level shifter: "+csv_file_list_level_shifter)
             except FileNotFoundError:
                 self.correction_log.append(f"❌ File not found")
@@ -807,7 +914,7 @@ class JsonExplorer(QMainWindow):
             self.health_report.append(f"Message : {e.msg}")
             return
 
-        stats = {"objects": 0, "lists": 0, "values": 0, "max_depth": 0}
+        stats = {"objects": 0, "lists": 0, "values": 0,"warning":0, "max_depth": 0}
         warnings,errors = [],[]
         def scan(obj, depth=0):
             stats["max_depth"] = max(stats["max_depth"], depth)
@@ -819,14 +926,15 @@ class JsonExplorer(QMainWindow):
                     scan(v, depth + 1)
             elif isinstance(obj, list):
                 stats["lists"] += 1
-                if len(obj) > 10000:
-                    warnings.append(f"Large array ({len(obj)} items)")
+                if len(obj) > 10000: warnings.append(f"Large array ({len(obj)} items)")
                 for v in obj:
                     scan(v, depth + 1)
             else:
                 stats["values"] += 1
                 if obj in ("", None):
-                    warnings.append("Empty value detected")
+                    stats["warning"] += 1
+                    if not any("Empty value detected"  in element for element in warnings): warnings.append("")
+                    warnings[0]= str(stats["warning"])+ " Empty value detected"
         scan(data)
 
         self.health_report.append("")
@@ -857,7 +965,7 @@ class JsonExplorer(QMainWindow):
 
         score = 100
         score -= len(errors) * 20
-        score -= len(warnings) * 5
+        score -= stats['warning'] * 5
         score = max(score, 0)
         self.health_report.append("")
         self.health_report.append("=" * 60)
@@ -920,6 +1028,8 @@ class JsonExplorer(QMainWindow):
         if not file_name: return
         self.load_json_file(file_name)
         self.tree.expandToDepth(0)
+        self.tabs.setTabEnabled(1, True)  # Désactive l'onglet n°1
+        self.tabs.setTabEnabled(2, True)  # Désactive l'onglet n°2
 
     def load_json_file(self, file_name):
 
@@ -936,6 +1046,8 @@ class JsonExplorer(QMainWindow):
             self.add_recent_file(file_name)
             self.fill_root_combo(data)
             self.log(f"Loaded : {file_name}")
+            self.tabs.setTabEnabled(1, True)  # Désactive l'onglet n°1
+            self.tabs.setTabEnabled(2, True)  # Désactive l'onglet n°2
 
         except Exception as e:
             QMessageBox.critical(self, "Error", str(e))
@@ -948,6 +1060,10 @@ class JsonExplorer(QMainWindow):
 
         try:
             data = json.loads(self.editor.toPlainText())
+            #Delete Root if only one in up level
+            if isinstance(data, dict) and len(data) == 1:
+                root_key = next(iter(data))
+                data = data[root_key]
             if not self.current_file:
                 self.current_file, _ = (QFileDialog.getSaveFileName(self, "Save JSON", "", "*.json"))
 
@@ -963,6 +1079,10 @@ class JsonExplorer(QMainWindow):
 
         try:
             data = json.loads(self.editor.toPlainText())
+            #Delete Root if only one in up level
+            if isinstance(data, dict) and len(data) == 1:
+                root_key = next(iter(data))
+                data = data[root_key]
             file_name, _ = QFileDialog.getSaveFileName(self, "Save As", "", "JSON Files (*.json)")
             if not file_name:
                 return
